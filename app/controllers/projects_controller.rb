@@ -7,8 +7,8 @@ class ProjectsController < ApplicationController
 
   def api
     @test = Project.all
-    render json: @user, status: ok
-    
+    render json: @test, status: :ok
+
   end
 
   def home

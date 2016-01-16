@@ -5,7 +5,7 @@ class AccountsController < ApplicationController
 
   def api
     @user = Account.all
-    render json: @user, status: ok
+    render json: @user, status: :ok
   end
 
   def new
