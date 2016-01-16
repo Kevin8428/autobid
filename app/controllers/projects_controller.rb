@@ -1,8 +1,12 @@
 class ProjectsController < ApplicationController
-  # before_action :authorize
+  before_action :authorize
   def index
     @test = Project.all
     # Ruby immediately looks for 'project' folder in views and if there's a view named 'index' it will automatically send @test to that view
+  end
+
+  def home
+
   end
 
   def show

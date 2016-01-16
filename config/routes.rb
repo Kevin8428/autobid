@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-root 'accounts#index'
+root 'projects#home'
 
 get '/register', to: 'accounts#new'
 post '/accounts', to: 'accounts#create'

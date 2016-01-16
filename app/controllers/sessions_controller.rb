@@ -6,7 +6,10 @@ class SessionsController < ApplicationController
     @user = Account.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to '/accounts'#this line redirects from log in to the home route; ie accounts>index.html.erb
+      # redirect_to '/accounts'#this line redirects from log in to the home route; ie accounts>index.html.erb
+
+      redirect_to account_path(@user.id)
+      # <%= link_to 'show', account_path(x.id)%>
 
     else
       render 'new'
