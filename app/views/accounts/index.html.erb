@@ -1,0 +1,7 @@
+<h1>Users</h1>
+<% @user.each do |x|%>
+  <!-- <h3><%=x.username%></h3> -->
+  <h3><%=x.email%></h3>
+  <%=x.password_digest%>
+  <%= link_to 'show', account_path(x.id)%>
+<%end%>

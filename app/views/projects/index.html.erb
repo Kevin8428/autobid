@@ -1,0 +1,7 @@
+<h1>Projects</h1>
+<% @test.each do |x| %>
+  <h3><%=x.title%></h3>
+  <p><%=x.description%></p>
+<%= link_to 'show', project_path(x.id)%>
+<%= link_to 'edit', edit_project_path(x.id)%>
+<%end%>

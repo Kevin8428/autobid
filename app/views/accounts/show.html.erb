@@ -1,0 +1,10 @@
+<h1>Welcome, <%= @user.username %>!</h1>
+<h3>User email: <%= @user.email%></h3>
+<h1>Your Projects</h1>
+
+<% @project.each do |x|%>
+  <% if x.account_id.to_i == @user.id.to_i%>
+    <h4><%= x.title %> : <%= x.description %></h4>
+
+  <%end%>
+<%end%>

@@ -1,0 +1,26 @@
+<%= form_for(@test)do|f| %>
+  <%= f.label 'title' %>
+  <%= f.text_field :title %><br>
+  <%= f.label 'desc' %>
+  <%= f.text_field :description %><br>
+  <%= f.label 'account' %>
+  <!-- <%= f.text_field :account_id, value: '100' %><br> -->
+  <%= f.text_field :account_id, value: session[:user_id] %><br>
+  <%= f.submit %>
+<% end %>
+<%=session[:user_id]%>
+<!-- <%= session.inspect%> -->
+
+<!--
+OTHER TYPES:
+
+text_field
+password_field
+text_area
+hidden_field
+radio_button
+check_box
+file_field
+label
+
+-->
