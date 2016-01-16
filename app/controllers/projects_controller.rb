@@ -18,16 +18,14 @@ class ProjectsController < ApplicationController
 # this looks for 'new' view in project view folder
   def new
     @test = Project.new
-    # @user = '22'
-    # @user = @current_user.id
-    # @user = Account.find(params[:id])
   end
 
 # this is the POST route
   def create
     @test = Project.new(project_params)
     if @test.save
-      redirect_to @test
+      redirect_to account_path(session[:user_id])
+
     else
       render :create
     end
