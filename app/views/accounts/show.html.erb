@@ -8,7 +8,11 @@
 <% @project.each do |x|%>
   <% if x.account_id.to_i == @user.id.to_i%>
     <h4><%= x.title %> : <%= x.description %>
-    <%= link_to 'show details', project_path(x.id)%> 
-    <%= link_to 'edit', edit_project_path(x.id)%></h4>
+    <%= link_to 'show details', project_path(x.id)%>
+    <%= link_to 'edit', edit_project_path(x.id)%>
+    <%= link_to 'remove', x, method: :delete%></h4>
   <%end%>
 <%end%>
+
+</p>
+<%= link_to 'Log out', '/logout'%>

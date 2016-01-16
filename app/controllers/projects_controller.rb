@@ -5,6 +5,12 @@ class ProjectsController < ApplicationController
     # Ruby immediately looks for 'project' folder in views and if there's a view named 'index' it will automatically send @test to that view
   end
 
+  def api
+    @test = Project.all
+    render json: @user, status: ok
+    
+  end
+
   def home
 
   end
@@ -47,6 +53,9 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    @test = Project.find(params[:id])
+    @test.destroy
+    redirect_to account_path(session[:user_id])
   end
 
   private

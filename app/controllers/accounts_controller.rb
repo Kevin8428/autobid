@@ -3,6 +3,11 @@ class AccountsController < ApplicationController
     @user = Account.all
   end
 
+  def api
+    @user = Account.all
+    render json: @user, status: ok
+  end
+
   def new
     @user = Account.new
   end

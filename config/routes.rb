@@ -6,7 +6,9 @@ get '/register', to: 'accounts#new'
 post '/accounts', to: 'accounts#create'
 get '/login', to: 'sessions#new'
 post '/sessions', to: 'sessions#create' #when sending from session yield this action
-delete '/logout', to: 'sessions#destroy'
+get '/logout', to: 'sessions#destroy'
+get '/accounts/api', to: 'accounts#api'
+get '/projects/api', to: 'projects#api'
 
 resources :accounts
 resources :projects
