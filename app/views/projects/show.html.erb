@@ -3,7 +3,31 @@
 
 <h3>Add comment</h3>
 <section id='add-comment'>
+  <input type="text" id='title-text' value="" placeholder=''>
+  <button type="button" id='title-button'>title</button>
+  <input type="text" id='account-text' value="" placeholder=''>
+  <button type="button" id='account-button'>account ID</button>
   <input type="text" id='comment-text' value="" placeholder=''>
   <button type="button" id='comment-button'>Add Comment</button>
   <div class='error'></div>
 </section>
+
+
+<h3 id = 'project-id'></h3>
+
+<div class="col-md-6">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>description</th>
+                <th>created at</th>
+                <th>updated at</th>
+                <th>account id</th>
+              </tr>
+            </thead>
+            <tbody id="project-table">
+            </tbody>
+          </table>
+        </div>

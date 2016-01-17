@@ -1,19 +1,113 @@
-$(document).ready(function(){
-  console.log('jquery is working');
+var app = app || {};
+app.blueprints = app.blueprints || {};
+app.active = app.active || {};
+////////////
+//////////// SINGLE MODEL CONSTRUCTOR
+// class constructor for each individual project
+// SHOULD NEVER CALL INSTANCE OF THIS
+app.blueprints.model = Backbone.Model.extend({
+  urlRoot: '/projects/api',
+  initialize: function(){
+    console.log('a model is ready')//when object of class is instantiated it's initialized here. Should see one message for every model in collection
+  }
 });
 
-var ProjectModel = Backbone.Model.extend({
-  urlRoot: '/projects/api'
+////////////
+//////////// COLLECTION CONSTRUCTOR
+// executed in evens triggers as window onload
+// this defines a collection class
+app.blueprints.collection = Backbone.Collection.extend({
+  url: '/projects/api', //endpoint exposing collection of models to DB
+  model: app.blueprints.model, //points to single model class to instantiate all data in the DB
+  initialize: function(){ //run when new collection of class is instantiated
+    console.log('ProjectsCollection running');
+    this.fetch(); //first fetch on initialize
+    this.on('change', function(){ //event listener
+      this.fetch(); //refetch when collection changes
+    });
+
+  }
 });
 
-// var ProjectCollection = Backbone.Collection.extend({
-//   model: ProjectModel,
-//   url: '/projects/api'
-// });
-
-var newProject = new ProjectModel({ title: 'AAA-api-test-title', description: 'api-test-description', account_id: '100'});
+// this the wrapper or container
+// var CollectionView = Backbone.View.extend();
+//SHOULD NEVER CALL INSTANCE OF SINGEL MODEL CONSTRUCTOR
+var newProject = new app.blueprints.model({ title: 'AAA-api-test-title', description: 'api-test-description', account_id: '100'});
 newProject.save()
 console.log(newProject.toJSON())
+
+
+////////////
+//////////// CREATE FUNCTION
+app.create = function(comment){
+  if (!comment) {
+    console.log('missing something!');
+    return false
+  }
+  app.active.projectsCollection.create({ //all is well, call create method to build new row
+    description: comment
+  });
+  return true;
+
+}
+
+
+//////////
+////////// COLLECTION VIEW CONSTRUCTOR
+app.blueprints.collectionView = Backbone.View.extend({
+  initialize: function() {
+    this.$el = $('#project-id');
+    this.render();
+    var that = this;
+    this.collection.on('sync', function(){
+      that.render();
+    });
+  },
+  render: function() {
+    this.$el.html('');
+    var models = this.collection.models;
+    for (var m in models){
+      var data = models[m];
+      new app.blueprints.modelView({
+        model: data
+      });
+    }
+  }
+});
+
+////////////
+//////////// SINGLE MODEL VIEW CONSTRUCTOR
+app.blueprints.modelView = Backbone.View.extend({
+  initialize: function(){
+    this.$el = $('#project-id');
+    this.template = _.template($('#table-row-template').html());
+    this.render();
+  },
+  render: function(){
+    var data = this.model.attributes;
+    this.$el.append(this.template(data));
+  }
+});
+
+$(document).ready(function(){
+  // console.log('jquery is working');
+  app.active.projectsCollection = new app.blueprints.collection();
+  app.active.projectsCollectionView = new app.blueprints.collectionView({
+    collection: app.active.projectsCollection
+  });
+  $('#add-comment').on('click', function(event){
+    event.preventDefault();
+    var comment = $('#comment-text').val();
+    app.create(comment);
+  });
+
+});
+
+
+
+///////////
+/////////// EVENTS AND TRIGGERS
+
 
 
 // ////////
