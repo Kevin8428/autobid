@@ -20,7 +20,7 @@ app.blueprints.collection = Backbone.Collection.extend({
   url: '/projects/api', //endpoint exposing collection of models to DB
   model: app.blueprints.model, //points to single model class to instantiate all data in the DB
   initialize: function(){ //run when new collection of class is instantiated
-    console.log('ProjectsCollection running');
+    console.log('commentscollection running');
     this.fetch(); //first fetch on initialize
     this.on('change', function(){ //event listener
       this.fetch(); //refetch when collection changes
@@ -44,9 +44,16 @@ app.create = function(comment){
     console.log('missing something!');
     return false
   }
-  app.active.projectsCollection.create({ //all is well, call create method to build new row
+  ///////TEST
+  app.active.commentscollection.create({ //all is well, call create method to build new row
     description: comment
   });
+  ///////END TEST
+
+  // app.active.commentscollection.create({ //all is well, call create method to build new row
+  //   description: comment
+  // });
+
   return true;
 
 }
@@ -91,9 +98,9 @@ app.blueprints.modelView = Backbone.View.extend({
 
 $(document).ready(function(){
   // console.log('jquery is working');
-  app.active.projectsCollection = new app.blueprints.collection();
-  app.active.projectsCollectionView = new app.blueprints.collectionView({
-    collection: app.active.projectsCollection
+  app.active.commentscollection = new app.blueprints.collection();
+  app.active.commentscollectionView = new app.blueprints.collectionView({
+    collection: app.active.commentscollection
   });
   $('#add-comment').on('click', function(event){
     event.preventDefault();
@@ -101,6 +108,8 @@ $(document).ready(function(){
     app.create(comment);
   });
 
+});app.active.projectsCollection.create({ //all is well, call create method to build new row
+  description: comment
 });
 
 

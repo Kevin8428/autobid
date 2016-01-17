@@ -1,32 +1,36 @@
 Rails.application.routes.draw do
 
-  get 'comment/index'
-
-  get 'comment/create'
-
-  get 'comment/update'
-
-  get 'comment/destroy'
-
-  get 'comment/new'
-
-  get 'comment/show'
-
-  get 'comment/edit'
+  # get 'comment/index'
+  #
+  # get 'comment/create'
+  #
+  # get 'comment/update'
+  #
+  # get 'comment/destroy'
+  #
+  # get 'comment/new'
+  #
+  # get 'comment/show'
+  #
+  # get 'comment/edit'
 
 root 'projects#home'
 
 get '/register', to: 'accounts#new'
-post '/accounts', to: 'accounts#create'
 get '/login', to: 'sessions#new'
 post '/sessions', to: 'sessions#create' #when sending from session yield this action
 get '/logout', to: 'sessions#destroy'
+post '/accounts', to: 'accounts#create'
 get '/accounts/api', to: 'accounts#api'
-get '/projects/api', to: 'projects#api'
 post '/projects/:id', to: 'projects#create'
+get '/projects/api', to: 'projects#api'
+post '/comments/:id', to 'comments#create'
+get '/comments/api', to: 'comments#api'
+# post '/comments/:id', to: 'comemnts#create'
 
 resources :accounts
 resources :projects
+resources :comments
 # resources :sessions
 
 # resources :sessions, only: [:new, :create]
