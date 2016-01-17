@@ -9,6 +9,7 @@ post '/sessions', to: 'sessions#create' #when sending from session yield this ac
 get '/logout', to: 'sessions#destroy'
 get '/accounts/api', to: 'accounts#api'
 get '/projects/api', to: 'projects#api'
+post '/projects/:id', to: 'projects#create'
 
 resources :accounts
 resources :projects
