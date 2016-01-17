@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'comment/index'
+
+  get 'comment/create'
+
+  get 'comment/update'
+
+  get 'comment/destroy'
+
+  get 'comment/new'
+
+  get 'comment/show'
+
+  get 'comment/edit'
+
 root 'projects#home'
 
 get '/register', to: 'accounts#new'
