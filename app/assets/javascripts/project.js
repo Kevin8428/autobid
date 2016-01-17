@@ -6,7 +6,7 @@ app.active = app.active || {};
 // class constructor for each individual project
 // SHOULD NEVER CALL INSTANCE OF THIS
 app.blueprints.model = Backbone.Model.extend({
-  urlRoot: '/projects/api',
+  urlRoot: '/comments/api',
   initialize: function(){
     console.log('a model is ready')//when object of class is instantiated it's initialized here. Should see one message for every model in collection
   }
@@ -17,7 +17,7 @@ app.blueprints.model = Backbone.Model.extend({
 // executed in evens triggers as window onload
 // this defines a collection class
 app.blueprints.collection = Backbone.Collection.extend({
-  url: '/projects/api', //endpoint exposing collection of models to DB
+  url: '/comments/api', //endpoint exposing collection of models to DB
   model: app.blueprints.model, //points to single model class to instantiate all data in the DB
   initialize: function(){ //run when new collection of class is instantiated
     console.log('commentscollection running');
@@ -32,9 +32,9 @@ app.blueprints.collection = Backbone.Collection.extend({
 // this the wrapper or container
 // var CollectionView = Backbone.View.extend();
 //SHOULD NEVER CALL INSTANCE OF SINGEL MODEL CONSTRUCTOR
-var newProject = new app.blueprints.model({ title: 'AAA-api-test-title', description: 'api-test-description', account_id: '100'});
-newProject.save()
-console.log(newProject.toJSON())
+// var newProject = new app.blueprints.model({ title: 'AAA-api-test-title', description: 'api-test-description', account_id: '100'});
+// newProject.save()
+// console.log(newProject.toJSON())
 
 
 ////////////
@@ -44,19 +44,13 @@ app.create = function(comment){
     console.log('missing something!');
     return false
   }
-  ///////TEST
   app.active.commentscollection.create({ //all is well, call create method to build new row
-    description: comment
+    description: comment,
+    // console.log('creating now!')
   });
-  ///////END TEST
-
-  // app.active.commentscollection.create({ //all is well, call create method to build new row
-  //   description: comment
-  // });
-
   return true;
 
-}
+};
 
 
 //////////
@@ -102,14 +96,13 @@ $(document).ready(function(){
   app.active.commentscollectionView = new app.blueprints.collectionView({
     collection: app.active.commentscollection
   });
-  $('#add-comment').on('click', function(event){
+  $('#comment-button').on('click', function(event){
     event.preventDefault();
     var comment = $('#comment-text').val();
     app.create(comment);
+    console.log('passing text: ' + comment);
   });
 
-});app.active.projectsCollection.create({ //all is well, call create method to build new row
-  description: comment
 });
 
 

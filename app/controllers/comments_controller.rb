@@ -18,10 +18,14 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
-  # def create
-  #   @comment = Comment.new(comment_params)
-  #   render 'new'
-  # end
+  def create
+    @comment = Comment.new()
+    if @comment.save
+      redirect_to account_path(session[:user_id])
+    else
+      render :index
+    end
+  end
 
   def update
   end
@@ -36,9 +40,9 @@ class CommentsController < ApplicationController
   end
 
   private
-  def comment_params
-    params.require(:account).permit(:email, :password, :password_confirmation, :username)
-    # params.require(:account).permit(:email, :username, :password)
-  end
+  # def comment_params
+  #   params.require(:description).permit(:email, :password, :password_confirmation, :username)
+  #   # params.require(:account).permit(:email, :username, :password)
+  # end
 
 end

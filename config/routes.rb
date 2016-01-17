@@ -24,9 +24,8 @@ post '/accounts', to: 'accounts#create'
 get '/accounts/api', to: 'accounts#api'
 post '/projects/:id', to: 'projects#create'
 get '/projects/api', to: 'projects#api'
-post '/comments/:id', to 'comments#create'
 get '/comments/api', to: 'comments#api'
-# post '/comments/:id', to: 'comemnts#create'
+post '/comments/:id', to: 'comments#create'
 
 resources :accounts
 resources :projects
