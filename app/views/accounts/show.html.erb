@@ -1,7 +1,7 @@
 <h1>Welcome, <%= @user.username %>!</h1>
-<h3>User email: <%= @user.email%></h3>
-</p>
-<%= link_to 'Create New Project', '/projects/new'%>
+<h3>User email: <%= @user.email%></h3></p>
+<%= link_to 'Create New Project', '/projects/new'%></p>
+<%= link_to 'Log out', '/logout'%>
 
 <h1>Your Projects</h1>
 
@@ -15,4 +15,3 @@
 <%end%>
 
 </p>
-<%= link_to 'Log out', '/logout'%>

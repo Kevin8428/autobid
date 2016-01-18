@@ -1,5 +1,7 @@
-<h1>Title: <%= @test.title %></h1>
+<h1>Title: <div id = 'user-id'><%= @test.title %></div></h1>
 <h3>Description: <%= @test.description%></h3>
+<%= link_to 'Log out', '/logout'%>
+<%= link_to 'My Account', account_path(@user.id)%>
 
 <h3>Add comment</h3>
 <section id='add-comment'>
@@ -16,38 +18,61 @@
 <h3 id = 'table-row-template'></h3>
 
 <div class="col-md-6">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>id</th>
-                <th>title</th>
-                <th>description</th>
-                <th>created at</th>
-                <th>updated at</th>
-                <th>account id</th>
-              </tr>
-            </thead>
-            <tbody id="project-table">
-            </tbody>
-          </table>
-        </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>title</th>
+        <th>description</th>
+        <th>created at</th>
+        <th>updated at</th>
+        <th>account id</th>
+      </tr>
+    </thead>
+    <tbody id="project-table">
+    </tbody>
+  </table>
+</div>
+
+<br>
+<div class="col-md-6">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>comment</th>
+      </tr>
+    </thead>
+    <tbody id="table-id">
+    </tbody>
+  </table>
+</div>
+
+
 
 <script>
-$.getJSON('/projects/api',
+$.getJSON('/comments/api',
   function(data){
     console.log('getjson works')
     console.log(data)
+
+    var user = document.getElementById('title-text').value;
+    console.log('USER ID IS ' + user);
     for(var i = 0; i< data.length; i++){
-      
+      var project_id = data[i].project_id
+
+      var comment = data[i].reply
+      console.log(comment + i)
+      if(user == project_id){
+        var tableRow = $('<tr>');
+        var var_user = user;
+        var var_comment = comment;
+        $('#table-id').append(tableRow);
+        tableRow.append('<td>'+var_user+'</td>');
+        tableRow.append('<td>'+var_comment+'</td>');
+      }
     }
-
   }
-
-
 );
 
-
-
 </script>
-
-<!-- <%= session.inspect %> -->
