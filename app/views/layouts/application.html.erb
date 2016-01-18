@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Autobid</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css">
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <!-- <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title> -->
+    <%= stylesheet_link_tag    "application" %>
+    <%= csrf_meta_tags %>
+    <!-- <%= javascript_include_tag "vendor/modernizr" %> -->
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
 
-<%= yield %>
 
-</body>
+
+
+
+
+  </head>
+
+  <body>
+
+    <%= yield %>
+
+  </body>
 </html>

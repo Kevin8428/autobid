@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'foundation-rails'
 gem 'rails-backbone'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
