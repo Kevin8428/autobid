@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :authorize
   skip_before_action :verify_authenticity_token
-  
+
   def index
     @test = Project.all
     # Ruby immediately looks for 'project' folder in views and if there's a view named 'index' it will automatically send @test to that view
@@ -30,6 +30,8 @@ class ProjectsController < ApplicationController
 
 # this is the POST route
   def create
+    puts '--------params'
+    puts params.inspect
     @test = Project.new(project_params)
     if @test.save
       redirect_to account_path(session[:user_id])

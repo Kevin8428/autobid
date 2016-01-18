@@ -13,4 +13,4 @@ window.Autobid =
 
 
 $(document).ready ->
-  Autobid.init()
+  # Autobid.init()

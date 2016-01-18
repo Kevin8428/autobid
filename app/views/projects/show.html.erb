@@ -3,7 +3,7 @@
 
 <h3>Add comment</h3>
 <section id='add-comment'>
-  <input type="text" id='title-text' value=<%= @test.id %>  placeholder=''>
+  <input type="text" id='title-text' value= <%= @test.id %>  placeholder=''>
   <button type="button" id='title-button'>project ID</button>
   <input type="text" id='account-text' value=<%=session[:user_id]%> placeholder=''>
   <button type="button" id='account-button'>account ID</button>
@@ -12,8 +12,8 @@
   <div class='error'></div>
 </section>
 
-
 <h3 id = 'project-id'></h3>
+<h3 id = 'table-row-template'></h3>
 
 <div class="col-md-6">
           <table class="table table-striped">
@@ -32,5 +32,22 @@
           </table>
         </div>
 
+<script>
+$.getJSON('/projects/api',
+  function(data){
+    console.log('getjson works')
+    console.log(data)
+    for(var i = 0; i< data.length; i++){
+      
+    }
 
-<%= params.inspect %>
+  }
+
+
+);
+
+
+
+</script>
+
+<!-- <%= session.inspect %> -->
