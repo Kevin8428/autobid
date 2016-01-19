@@ -14,3 +14,4 @@ window.Autobid =
 
 $(document).ready ->
   # Autobid.init()
+  # $('#example').dataTable();

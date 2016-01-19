@@ -5,10 +5,10 @@
 
 <h3>Add comment</h3>
 <section id='add-comment'>
-  <input type="text" id='title-text' value= <%= @test.id %>  placeholder=''>
-  <button type="button" id='title-button'>project ID</button>
-  <input type="text" id='account-text' value=<%=session[:user_id]%> placeholder=''>
-  <button type="button" id='account-button'>account ID</button>
+  <input type="hidden" id='title-text' value= <%= @test.id %>  placeholder=''>
+  <!-- <button type="button" id='title-button'>project ID</button> -->
+  <input type="hidden" id='account-text' value=<%=session[:user_id]%> placeholder=''>
+  <!-- <button type="button" id='account-button'>account ID</button> -->
   <input type="text" id='comment-text' value="" placeholder=''>
   <button type="button" id='comment-button'>Add Comment</button>
   <div class='error'></div>

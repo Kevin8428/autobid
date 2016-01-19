@@ -1,0 +1,78 @@
+
+Error: File to import not found or unreadable: util/util.
+       Load path: /Users/kevindeutscher/dragons/auto-bid/autobid
+        on line 42 of app/assets/stylesheets/_settings.scss
+        from line 3 of ./app/assets/stylesheets/foundation_and_overrides.scss
+
+37: @include foundation-slider;
+38: @include foundation-sticky;
+39: @include foundation-reveal;
+40: @include foundation-switch;
+41: @include foundation-table;
+42: @include foundation-tabs;
+43: @include foundation-thumbnail;
+44: @include foundation-title-bar;
+45: @include foundation-tooltip;
+46: @include foundation-top-bar;
+47:
+
+Backtrace:
+app/assets/stylesheets/_settings.scss:42
+./app/assets/stylesheets/foundation_and_overrides.scss:3
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/import_node.rb:45:in `import'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:326:in `block (2 levels) in visit_import'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:326:in `map'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/stack.rb:88:in `block in with_import'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/stack.rb:88:in `with_import'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:323:in `visit_import'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/engine.rb:295:in `render_with_sourcemap'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:293:in `watch'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/plugin.rb:109:in `method_missing'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:383:in `watch_or_update'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/exec/base.rb:52:in `parse'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/lib/sass/exec/base.rb:19:in `parse!'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/bin/sass:13:in `<top (required)>'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/bin/sass:23:in `load'
+/Users/kevindeutscher/.rbenv/versions/2.2.3/bin/sass:23:in `<main>'
+
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: util/util.\A        Load path: /Users/kevindeutscher/dragons/auto-bid/autobid\A         on line 42 of app/assets/stylesheets/_settings.scss\A         from line 3 of ./app/assets/stylesheets/foundation_and_overrides.scss\A \A 37: @include foundation-slider;\A 38: @include foundation-sticky;\A 39: @include foundation-reveal;\A 40: @include foundation-switch;\A 41: @include foundation-table;\A 42: @include foundation-tabs;\A 43: @include foundation-thumbnail;\A 44: @include foundation-title-bar;\A 45: @include foundation-tooltip;\A 46: @include foundation-top-bar;\A 47: "; }
