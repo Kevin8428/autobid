@@ -1,12 +1,12 @@
 
 
-/*# sourceMappingURL=account.css.map */
+# sourceMappingURL=account.css.map
 
 
 
-/*# sourceMappingURL=comment.css.map */
+# sourceMappingURL=comment.css.map
 
-/*
+
 Error: File to import not found or unreadable: util/util.
        Load path: /Users/kevindeutscher/dragons/auto-bid/autobid
         on line 42 of app/assets/stylesheets/_settings.scss
@@ -22,7 +22,7 @@ Error: File to import not found or unreadable: util/util.
 44: @include foundation-title-bar;
 45: @include foundation-tooltip;
 46: @include foundation-top-bar;
-47: 
+47:
 
 Backtrace:
 app/assets/stylesheets/_settings.scss:42
@@ -79,7 +79,7 @@ app/assets/stylesheets/_settings.scss:42
 /Users/kevindeutscher/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/sass-3.4.21/bin/sass:13:in `<top (required)>'
 /Users/kevindeutscher/.rbenv/versions/2.2.3/bin/sass:23:in `load'
 /Users/kevindeutscher/.rbenv/versions/2.2.3/bin/sass:23:in `<main>'
-*/
+
 
 body:before {
   white-space: pre;
@@ -5008,4 +5008,3 @@ table.hover tr:nth-of-type(even):hover {
 
 
  */
-
