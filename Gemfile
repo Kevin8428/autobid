@@ -2,17 +2,22 @@ source 'https://rubygems.org'
 
 gem 'foundation-rails'
 gem 'rails-backbone'
-gem 'compass-rails'
-# gem 'jquery-datatables-rails', '~> 1.12.2'
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
-# Use postgresql as the database for Active Record
-gem 'pg', '~> 0.15'
-# Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'rails', '4.2.5'
+gem 'pg', '~> 0.15'
+gem "compass-rails", github: "Compass/compass-rails", branch: "master"
+# gem 'sprockets'
+# gem 'uglifier', '>= 1.3.0'
+
+# gem 'jquery-datatables-rails', '~> 1.12.2'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# Use postgresql as the database for Active Record
+# Use SCSS for stylesheets
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# Use postgresql as the database for Active Record
+# Use SCSS for stylesheets
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+
 # Use CoffeeScript for .coffee assets and views
 # gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
