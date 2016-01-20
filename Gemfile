@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'foundation-rails'
 gem 'rails-backbone'
+gem 'compass-rails'
 # gem 'jquery-datatables-rails', '~> 1.12.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
