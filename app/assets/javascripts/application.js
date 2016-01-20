@@ -24,6 +24,5 @@
 //= require backbone/autobid
 //= require_tree .
 
-// $(function(){ $(document).foundation(); });
-$(document).foundation();
+$(function(){ $(document).foundation(); });
 // <script src="http://code.jquery.com/jquery-latest.js"></script>
