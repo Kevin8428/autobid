@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 
-//= require foundation
 //= require turbolinks
 //= require underscore
 //= require backbone/autobid
@@ -23,6 +22,4 @@
 //= require backbone_datalink
 //= require backbone/autobid
 //= require_tree .
-
-$(function(){ $(document).foundation(); });
-// <script src="http://code.jquery.com/jquery-latest.js"></script>
+//= require bootstrap.min 

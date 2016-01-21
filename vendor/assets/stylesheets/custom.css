@@ -1,0 +1,19 @@
+/*ADD ONS*/
+
+/* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
+
+.full {
+width: 100%;
+height: 100%;
+padding: 0;
+position: absolute;
+background-repeat: no-repeat;
+background-size: cover;
+opacity: 0.6;
+background-image: url(<%=image_path('saab.jpg'%>));
+}
+
+
+
+
+/*END ADD ONS*/

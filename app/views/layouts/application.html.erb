@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css">
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
-    <!-- <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title> -->
     <%= stylesheet_link_tag    "application" %>
     <%= csrf_meta_tags %>
-    <!-- <%= javascript_include_tag "vendor/modernizr" %> -->
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
-
+    <!-- <%= image_tag("saab.jpg", :class => 'full', :alt => "saab") %> -->
 
 
 
@@ -19,28 +13,46 @@
 
   </head>
 
-  <body>
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="/">Autobid</a></h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-      </ul>
-      <section class="top-bar-section">
-        <ul class="right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="/login">Log in</a></li>
-          <li><a href="/register">Register</a></li>
-          <li><a href="/logout">Log out</a></li>
-        </ul>
-      </section>
-    </nav>
-
+  <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" href="/">autobid</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <form class="navbar-form navbar-right" action='/account/login' method='post'>
+        <div class="form-group">
+          <input type="text" name="username" placeholder="Username" class="form-control">
+        </div>
+         <div class="form-group">
+          <input type="password" name="password" placeholder="Password" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-success">Sign in</button>
+        </form>
+        <form class="navbar-form navbar-right" action='/projects' method='get'>
+        <button type="submit" class="btn btn-default">View All projects</button>
+        </form>
+        <form class="navbar-form navbar-right" action='' method='get'>
+        <button type="submit" class="btn btn-default">View My Projects</button>
+        </form>
+        <form class="navbar-form navbar-right" action='/projects/new' method='get'>
+        <button type="submit" class="btn btn-default">Create Project</button>
+        </form> -->
+         <!-- <a href = <%=register_path%> class = "btn btn-default">register</a> -->
+      <!-- </div>
+    </div>
+  </nav> -->
 
 
 
     <%= yield %>
+
+
 
   </body>
 </html>
