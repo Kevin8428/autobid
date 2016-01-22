@@ -14,11 +14,23 @@ background-image: url(<%=image_path('saab.jpg'%>));
 }
 
 .bgimage {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  padding-top: 30px;
+
+  top: 0;
+  left: 0;
+
   background-image: url('saab.jpg');
   background-position: center center;
   background-size: cover;
-  height: 200px;
+  /*opacity: 0.1;*/
+  height: 100%;
+  width: 100%;
 }
 
+#welcome {
 
+  }
 /*END ADD ONS*/

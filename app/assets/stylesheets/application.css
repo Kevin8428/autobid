@@ -12,7 +12,8 @@
  *
  *= require_tree .
  *= require_self
- *= require bootstrap.min
- *= require custom
+ *= require bootstrap.css
+ *= require custom.css
+ *= require accounts.css
 
  */

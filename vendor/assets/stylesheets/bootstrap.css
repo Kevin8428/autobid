@@ -14,7 +14,6 @@ html {
 body {
   margin-top: 50px; /* Required margin for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
   margin: 0;
-  background-color: blue;
 }
 article,
 aside,
@@ -4281,7 +4280,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   height: 50px;
-  padding: 15px 15px;
+  padding: 15px 0px;
   font-size: 18px;
   line-height: 20px;
 }
