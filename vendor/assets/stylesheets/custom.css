@@ -13,7 +13,12 @@ opacity: 0.6;
 background-image: url(<%=image_path('saab.jpg'%>));
 }
 
-
+.bgimage {
+  background-image: url('saab.jpg');
+  background-position: center center;
+  background-size: cover;
+  height: 200px;
+}
 
 
 /*END ADD ONS*/
