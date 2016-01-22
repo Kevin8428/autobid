@@ -4,16 +4,48 @@
 
 <%= render 'projects/nav'%>
 <h1>Welcome, <%= @user.username %>!</h1>
-<h3>User email: <%= @user.email%></h3></p>
 
 <h1>Your Projects</h1>
 
+<div class="col-md-6">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>description</th>
+        <th>detail</th>
+        <th>edit</th>
+        <th>remove</th>
+      </tr>
+    </thead>
+    <tbody id="table-id">
+    </tbody>
+  </table>
+</div>
+
+
+
+
 <% @project.each do |x|%>
   <% if x.account_id.to_i == @user.id.to_i%>
-    <h4><%= x.title %> : <%= x.description %>
-    <%= link_to 'show details', project_path(x.id)%>
+    <script type="text/javascript">
+    var tableRow = $('<tr>');
+    var var_title = '<%=x.title%>';
+    var var_description = '<%=x.description%>';
+    var var_detail = '<%= link_to 'show details', project_path(x.id)%>';
+    var var_edit = '<%= link_to 'edit', edit_project_path(x.id)%>';;
+    var var_remove = '<%= link_to 'remove', x, method: :delete%>';
+    $('#table-id').append(tableRow);
+    tableRow.append('<td>'+var_title+'</td>');
+    tableRow.append('<td>'+var_description+'</td>');
+    tableRow.append('<td>'+var_detail+'</td>');
+    tableRow.append('<td>'+var_edit+'</td>');
+    tableRow.append('<td>'+var_remove+'</td>');
+    </script>
+    <!-- <h4><%= x.title %> : <%= x.description %> -->
+    <!-- <%= link_to 'show details', project_path(x.id)%>
     <%= link_to 'edit', edit_project_path(x.id)%>
-    <%= link_to 'remove', x, method: :delete%></h4>
+    <%= link_to 'remove', x, method: :delete%></h4> -->
   <%end%>
 <%end%>
 

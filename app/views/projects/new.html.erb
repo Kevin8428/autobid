@@ -1,5 +1,7 @@
 <%= render(:partial => 'nav')%>
-<br/>
-<br/>
+<% content_for :head do %>
+  <!--define style -->
+  <%= stylesheet_link_tag "account" %>
+<%end%>
 <h1>new project</h1>
 <%= render 'form'%>

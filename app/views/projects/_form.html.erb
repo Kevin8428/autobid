@@ -1,12 +1,15 @@
-<%= form_for(@test)do|f| %>
-  <%= f.label 'title' %>
-  <%= f.text_field :title %><br>
-  <%= f.label 'desc' %>
-  <%= f.text_field :description %><br>
-  <%= f.hidden_field :account_id, value: session[:user_id] %><br>
+<%= form_for @test, :html => {:class => 'comment-box'} do|f| %>
+  <%= f.label 'title' %><br/>
+  <%= f.text_field :title, :id =>'user-input-title'%><br/>
+  <%= f.label 'description' %><br/>
+  <%= f.text_field :description, :id =>'user-input-description'%><br/>
+  <%= f.hidden_field :account_id, value: session[:user_id] %><br/>
   <%= f.submit %>
 <% end %>
-<!-- <%=session[:user_id]%> -->
+
+
+
+<!-- <h2 class = 'comment-box'>test</h2> -->
 
 <!--
 OTHER TYPES:

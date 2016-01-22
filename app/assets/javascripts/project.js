@@ -92,6 +92,7 @@ $(document).ready(function(){
     collection: app.active.commentscollection
   });
   $('#comment-button').on('click', function(event){
+    window.location.reload(); //REMOVE ONCE RENDER VIEW WORKS
     event.preventDefault();
     var comment = $('#comment-text').val();
     var project_id = $('#title-text').val()

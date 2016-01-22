@@ -1,3 +1,8 @@
+<%= render(:partial => 'nav')%>
+<% content_for :head do %>
+  <!--define style -->
+  <%= stylesheet_link_tag "account" %>
+<%end%>
 <h1>Title: <div id = 'user-id'><%= @test.title %></div></h1>
 <h3>Description: <%= @test.description%></h3>
 <%= link_to 'Log out', '/logout'%>
@@ -9,30 +14,13 @@
   <!-- <button type="button" id='title-button'>project ID</button> -->
   <input type="hidden" id='account-text' value=<%=session[:user_id]%> placeholder=''>
   <!-- <button type="button" id='account-button'>account ID</button> -->
-  <input type="text" id='comment-text' value="" placeholder=''>
+  <input type="text" id='comment-text' value="" placeholder='add comment'><br/>
   <button type="button" id='comment-button'>Add Comment</button>
   <div class='error'></div>
 </section>
 
 <h3 id = 'project-id'></h3>
 <h3 id = 'table-row-template'></h3>
-
-<div class="col-md-6">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>id</th>
-        <th>title</th>
-        <th>description</th>
-        <th>created at</th>
-        <th>updated at</th>
-        <th>account id</th>
-      </tr>
-    </thead>
-    <tbody id="project-table">
-    </tbody>
-  </table>
-</div>
 
 <br>
 <div class="col-md-6">
@@ -47,8 +35,6 @@
     </tbody>
   </table>
 </div>
-
-
 
 <script>
 $.getJSON('/comments/api',

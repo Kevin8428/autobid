@@ -1,7 +1,35 @@
 <%= render(:partial => 'nav')%>
 <h1>Projects</h1>
-<% @test.each do |x| %>
-  <h3><%=x.title%></h3>
-  <p><%=x.description%></p>
-<%= link_to 'show', project_path(x.id)%>
+
+
+
+
+<div class="col-md-6">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>description</th>
+        <th>detail</th>
+      </tr>
+    </thead>
+    <tbody id="table-id">
+    </tbody>
+  </table>
+</div>
+
+<% @test.each do |x|%>
+    <script type="text/javascript">
+    var tableRow = $('<tr>');
+    var var_title = '<%=x.title%>';
+    var var_description = '<%=x.description%>';
+    var var_detail = '<%= link_to 'show details', project_path(x.id)%>';
+    $('#table-id').append(tableRow);
+    tableRow.append('<td>'+var_title+'</td>');
+    tableRow.append('<td>'+var_description+'</td>');
+    tableRow.append('<td>'+var_detail+'</td>');
+    </script>
 <%end%>
+
+
+</p>

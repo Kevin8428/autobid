@@ -33,4 +33,32 @@ background-image: url(<%=image_path('saab.jpg'%>));
 #welcome {
 
   }
+
+#user-input-title {
+  width: 80%;
+  height: 5rem;
+  opacity: 0.7;
+}
+
+#test-id{
+  width: 80%;
+  height: 5rem;
+  opacity: 0.7;
+}
+
+#comment-text{
+  width: 80%;
+  height: 10rem;
+  opacity: 0.7;
+}
+
+
+#user-input-description {
+  width: 80%;
+  height: 20rem;
+  opacity: 0.7;
+}
+
+
+
 /*END ADD ONS*/
