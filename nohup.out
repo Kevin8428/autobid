@@ -1,0 +1,294 @@
+Warning: You're using Rubygems 1.8.23 with Spring. Upgrade to at least Rubygems 2.1.0 and run `gem pristine --all` for better startup performance.
+[2016-01-24 17:37:36] INFO  WEBrick 1.3.1
+[2016-01-24 17:37:36] INFO  ruby 1.9.3 (2013-11-22) [x86_64-linux]
+[2016-01-24 17:37:36] INFO  WEBrick::HTTPServer#start: pid=1310 port=80
+Warning: You're using Rubygems 1.8.23 with Spring. Upgrade to at least Rubygems 2.1.0 and run `gem pristine --all` for better startup performance.
+A server is already running. Check /root/autobid/tmp/pids/server.pid.
+=> Booting WEBrick
+=> Rails 4.2.5 application starting in development on http://localhost:80
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+Exiting
+Warning: You're using Rubygems 1.8.23 with Spring. Upgrade to at least Rubygems 2.1.0 and run `gem pristine --all` for better startup performance.
+[2016-01-24 19:15:31] INFO  WEBrick 1.3.1
+[2016-01-24 19:15:31] INFO  ruby 1.9.3 (2013-11-22) [x86_64-linux]
+[2016-01-24 19:15:31] INFO  WEBrick::HTTPServer#start: pid=2747 port=80
+=> Booting WEBrick
+=> Rails 4.2.5 application starting in development on http://0.0.0.0:80
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+
+
+Started GET "/" for 73.8.92.226 at 2016-01-24 19:16:15 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectsController#home as HTML
+Redirected to http://192.241.189.66/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 73.8.92.226 at 2016-01-24 19:16:16 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (54.1ms)
+Completed 200 OK in 931ms (Views: 930.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/comments/api" for 73.8.92.226 at 2016-01-24 19:16:17 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#api as JSON
+Redirected to http://192.241.189.66/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 73.8.92.226 at 2016-01-24 19:16:18 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as JSON
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 49ms (Views: 48.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 73.8.92.226 at 2016-01-24 19:16:21 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 50ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/account.self-d2fefe18a71da57eee2141bce760e3400d33f26242847bd68d9762dbdc4b21de.css?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/accounts.self-01735face97efce0e203b0184a2a2296469741dcc361e4bec50bc050b5851caf.css?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/projects.self-d2fefe18a71da57eee2141bce760e3400d33f26242847bd68d9762dbdc4b21de.css?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/custom.self-a3a098e98264314d29d5486afc7b2fee4b57fb6fd0528be34f0f2bac7b5c5293.css?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-f78feb67e8049abf326e5f19e9ab2ba7f61b9f1fb25454cd35f52b7a3ef8936a.css?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.self-b0ce727c6115a311d7a1a1cc5af244c597b9146d09879c1d18b1a0d9ad26bee3.css?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/backbone/autobid.self-2b24520e9c111814d3079d565a7385e45ade557112ae1fe790283f60c20c352f.js?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/backbone.self-4ac1c9ebee6ebcd1614a8f92d41cb270e61e0b8f61c804c0d1b26fda4b889824.js?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/backbone_rails_sync.self-8e45fa00c2de5897971e95332731a7c9ab7615648df8501ecdfef15db7c990e4.js?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/backbone_datalink.self-0740aa5c768603aa7bf25bb0c5454e8d1e44f973443badba84a35f60b1355ec7.js?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/account.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/comment.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/project.self-29490707c10e114d40a389169f9bef491c321e32c75c1f706d5165a12a097e63.js?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-55d2f88127dcaaa99d5c6a5261f9015880991431c520781213525a199c900f0d.js?body=1" for 73.8.92.226 at 2016-01-24 19:16:22 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/saab.jpg" for 73.8.92.226 at 2016-01-24 19:16:23 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/comments/api" for 73.8.92.226 at 2016-01-24 19:16:23 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#api as JSON
+Redirected to http://192.241.189.66/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 73.8.92.226 at 2016-01-24 19:16:23 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as JSON
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 125ms (Views: 124.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 73.8.92.226 at 2016-01-24 19:16:24 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V6w51C2GlHwtMyJ2GE8PCTQIjkkpkFOPQ+cRhMZ4o9G1aDOJAUjUDDy6jSeVKzcIfePTwR/I6sgRRldM/zW6tQ==", "email"=>"test", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mAccount Load (0.7ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = $1 LIMIT 1  [["email", "test"]]
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 194ms (Views: 39.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/comments/api" for 73.8.92.226 at 2016-01-24 19:16:24 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#api as JSON
+Redirected to http://192.241.189.66/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 73.8.92.226 at 2016-01-24 19:16:24 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as JSON
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 73.8.92.226 at 2016-01-24 19:16:25 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"chAFxPxrnaZRkCiDkKWfFyV/P/BN4t511VJKP0O429uQ1A+Z0KXd1kAZh9IdwacWbJRieHu6ZzKH8wz3evXCvw==", "email"=>"test", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = $1 LIMIT 1[0m  [["email", "test"]]
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 46ms (Views: 44.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/comments/api" for 73.8.92.226 at 2016-01-24 19:16:26 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#api as JSON
+Redirected to http://192.241.189.66/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 73.8.92.226 at 2016-01-24 19:16:26 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as JSON
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 109ms (Views: 107.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 73.8.92.226 at 2016-01-24 19:16:26 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7S3Ixs3dmLcjFGCTfhqdIIEirPXrehh9AilsqIpb/LkP6cKb4RPYxzKdz8LzfqUhyMnxfd0ioTpQiCpgsxbl3Q==", "email"=>"test", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mAccount Load (0.3ms)[0m  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = $1 LIMIT 1  [["email", "test"]]
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 45ms (Views: 43.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/comments/api" for 73.8.92.226 at 2016-01-24 19:16:27 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#api as JSON
+Redirected to http://192.241.189.66/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 73.8.92.226 at 2016-01-24 19:16:27 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as JSON
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 41ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 73.8.92.226 at 2016-01-24 19:18:32 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nCMy2SytDA0BSAcH7SHlXD8brLaSdJO84ooz7YVEqbl+5ziEAGNMfRDBqFZgRd1ddvDxPqQsKvuwK3UlvAmw3Q==", "email"=>"test", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mAccount Load (0.6ms)[0m  [1mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = $1 LIMIT 1[0m  [["email", "test"]]
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 51ms (Views: 47.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/comments/api" for 73.8.92.226 at 2016-01-24 19:18:33 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#api as JSON
+Redirected to http://192.241.189.66/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 73.8.92.226 at 2016-01-24 19:18:33 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as JSON
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 46ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css.map" for 73.8.92.226 at 2016-01-24 19:18:39 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.css.map"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:31:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (82.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (118.5ms)
+
+
+Started GET "/comments/new" for 73.8.92.226 at 2016-01-24 19:18:57 -0500
+Cannot render console from 73.8.92.226! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+[2016-01-24 19:19:53] ERROR bad Request-Line `/'.

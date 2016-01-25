@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'therubyracer'
 gem 'rails-backbone'
 gem 'sass-rails', '~> 5.0'
 gem 'rails', '4.2.5'
