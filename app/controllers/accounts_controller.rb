@@ -1,6 +1,9 @@
 class AccountsController < ApplicationController
   def index
+    session[:user_id] = nil
     @user = Account.all
+    render 'projects/home'
+    # redirect_to '/register'
   end
 
   def api

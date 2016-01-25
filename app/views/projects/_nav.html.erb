@@ -7,28 +7,21 @@
        <span class="icon-bar"></span>
        <span class="icon-bar"></span>
        </button>
-       <a class="navbar-brand" href="/">autobid</a>
+       <a class="navbar-brand" href="/logout">autobid</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <form class="navbar-form navbar-right" action='/account/login' method='post'>
-      <div class="form-group">
-        <input type="text" name="username" placeholder="Username" class="form-control">
-      </div>
-       <div class="form-group">
-        <input type="password" name="password" placeholder="Password" class="form-control">
-      </div>
-      <button type="submit" class="btn btn-success">Sign in</button>
+      <form class="navbar-form navbar-right" action='/logout' method='get'>
+      <button type="submit" class="btn btn-default">logout</button>
       </form>
       <form class="navbar-form navbar-right" action='/projects' method='get'>
       <button type="submit" class="btn btn-default">View All projects</button>
       </form>
-      <form class="navbar-form navbar-right" action='' method='get'>
+      <form class="navbar-form navbar-right" action='../accounts/<%=session[:user_id]%>' method='get'>
       <button type="submit" class="btn btn-default">View My Projects</button>
       </form>
       <form class="navbar-form navbar-right" action='/projects/new' method='get'>
       <button type="submit" class="btn btn-default">Create Project</button>
-      </form> -->
-       <!-- <a href = <%=register_path%> class = "btn btn-default">register</a> -->
+      </form>
     </div>
   </div>
 </nav>
