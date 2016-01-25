@@ -10,7 +10,7 @@
 
 <h3>Add comment</h3>
 <section id='add-comment'>
-  <input type="hidden" id='title-text' value= <%= @test.id %>  placeholder=''>
+  <input type="hidden" id='title-text' value= <%= @user.username %>  placeholder=''>
   <!-- <button type="button" id='title-button'>project ID</button> -->
   <input type="hidden" id='account-text' value=<%=session[:user_id]%> placeholder=''>
   <!-- <button type="button" id='account-button'>account ID</button> -->
@@ -27,8 +27,8 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>id</th>
-        <th>comment</th>
+        <th>User</th>
+        <th>Comment</th>
       </tr>
     </thead>
     <tbody id="table-id">
