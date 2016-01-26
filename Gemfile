@@ -6,6 +6,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'rails', '4.2.5'
 gem 'pg', '~> 0.15'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
+gem 'carrierwave'
 # gem 'sprockets'
 # gem 'uglifier', '>= 1.3.0'
 
