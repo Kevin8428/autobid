@@ -1,58 +1,56 @@
 <%= stylesheet_link_tag 'application' %>
 <%= render(:partial => 'nav')%>
-<h1>Title: <div id = 'user-id'><%= @test.title %></div></h1>
+<h1 id='project-head'>Title: <%= @test.title %></h1>
 <h3>Description: <%= @test.description%></h3>
-<%= link_to 'Log out', '/logout'%>
-<%= link_to 'My Account', account_path(@user.id)%>
-<br>
-user:<%= @user.username %>
-<br>
-<h3>Add comment</h3>
-<section id='add-comment'>
 
-  <!-- <input type="hidden" id='title-text' value= <%= @user.username %>  placeholder=''> -->
-  <input type="hidden" id='account-text' value=<%=session[:user_id]%> placeholder=''>
-  <input type="text" id='comment-text' value="" placeholder='add comment'><br/>
-  <button type="button" id='comment-button'>Add Comment</button>
-  <div class='error'></div>
-</section>
-
-<h3 id = 'project-id'></h3>
-<h3 id = 'table-row-template'></h3>
-
-<br>
-<div class="col-md-6">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Comment</th>
-      </tr>
-    </thead>
-    <tbody id="table-id">
-    </tbody>
-  </table>
+<!-- <%= link_to 'Log out', '/logout'%>
+<%= link_to 'My Account', account_path(@user.id)%> -->
+<div class="project-container">
+    <h3>Add comment</h3>
+    <section id='add-comment'>
+      <input type="hidden" id='title-text' value= <%= @test.id %>  placeholder=''>
+      <input type="hidden" id='account-text' value=<%=session[:user_id]%> placeholder=''>
+      <input type="text" id='comment-text' value="" placeholder='add comment'><br/>
+      <button type="button" id='comment-button'>Add Comment</button>
+      <div class='error'></div>
+    </section>
+    <h3 id = 'project-id'></h3>
+    <h3 id = 'table-row-template'></h3>
+    <br>
+    <div class="project-comment">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th id='th-comment'>User</th>
+            <th id='th-comment'>Comment</th>
+          </tr>
+        </thead>
+        <tbody id="table-id">
+        </tbody>
+      </table>
+    </div>
 </div>
-
 <script>
 $.getJSON('/comments/api',
   function(data){
     console.log('getjson works')
     console.log(data)
 
-    var user = document.getElementById('title-text').value;
-    console.log('USER ID IS ' + user);
+    var project = '<%= @test.id %>';
+    var username = '<%= @user.username %>'
+    // var user = document.getElementById('title-text').value;
+    // console.log('USER ID IS ' + user);
     for(var i = 0; i< data.length; i++){
-      var project_id = data[i].project_id
+      var project_id = data[i].project_id;
 
-      var comment = data[i].reply
+      var comment = data[i].reply;
       console.log(comment + i)
-      if(user == project_id){
+      if(parseInt(project) == parseInt(project_id)){
         var tableRow = $('<tr>');
-        var var_user = user;
+        var var_user = username;
         var var_comment = comment;
         $('#table-id').append(tableRow);
-        tableRow.append('<td>'+var_user+'</td>');
+        tableRow.append('<td>'+username+'</td>');
         tableRow.append('<td>'+var_comment+'</td>');
       }
     }
