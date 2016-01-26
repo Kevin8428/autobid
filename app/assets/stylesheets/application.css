@@ -14,6 +14,7 @@
  *= require_self
  *= require bootstrap.css
  *= require custom.css
+ *= require projects.css
  *= require accounts.css
 
  */

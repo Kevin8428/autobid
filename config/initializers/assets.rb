@@ -4,6 +4,7 @@
 Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( application.css )
 Rails.application.config.assets.precompile += %w( account.css )
+Rails.application.config.assets.precompile += %w( accounts.css )
 Rails.application.config.assets.precompile += %w( project.css )
 Rails.application.config.assets.precompile += %w( jquery.bdt.js )
 Rails.application.config.assets.precompile += %w( jquery.sortelements.js )
