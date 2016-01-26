@@ -51,6 +51,11 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     chunky_png (1.3.5)
     coderay (1.1.0)
     coffee-rails (4.1.1)
@@ -185,6 +190,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  carrierwave
   compass-rails!
   jbuilder (~> 2.0)
   jquery-rails
