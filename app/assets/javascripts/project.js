@@ -1,3 +1,7 @@
+$(document).ready( function () {
+  $('#bootstrap-table').bdt();
+});
+
 var app = app || {};
 app.blueprints = app.blueprints || {};
 app.active = app.active || {};

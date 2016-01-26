@@ -1,39 +1,168 @@
 <%= render(:partial => 'nav')%>
 <% content_for :head do %>
-  <%= stylesheet_link_tag "account" %>
+  <%= stylesheet_link_tag "project" %>
 <%end%>
 
 <h1>Projects</h1>
 
 
+<div class="input-group"> <span class="input-group-addon">Filter</span>
+
+    <input id="filter" type="text" class="form-control" placeholder="Type here...">
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Detail</th>
+        </tr>
+    </thead>
+    <tbody id="table-id" class="searchable">
+    </tbody>
+</table>
+
+<script type="text/javascript">
+$(document).ready(function () {
+
+  (function ($) {
+
+      $('#filter').keyup(function () {
+
+          var rex = new RegExp($(this).val(), 'i');
+          $('.searchable tr').hide();
+          $('.searchable tr').filter(function () {
+              return rex.test($(this).text());
+          }).show();
+
+      })
+
+  }(jQuery));
+
+});
+</script>
+
+<!-- <div class="form-inline">
+    <button type="button"
+            class="btn btn-default mybtn-top">
+        Scroll to top
+    </button>
+    <button type="button"
+            class="btn btn-default mybtn-row">
+        Scroll to row index:
+    </button>
+        <input type="number"
+               class="form-control row-index"
+               value="3" min="0">
+    <button type="button"
+            class="btn btn-default mybtn-btm">
+        Scroll to bottom
+    </button>
+</div>
+
+<div style="padding: 10px; ">
+    <br>
+    <table id="table" data-search="true" data-show-columns="true" data-pagination="true" data-height="250">
+        <thead>
+            <tr>
+                <th data-field="title" data-sortable="true">Title</th>
+                <th data-field="description" data-sortable="true" width="200">Description</th>
+                <th data-field="make" data-sortable="true">Make</th>
+                <th data-field="model" data-sortable="true">Model</th>
+                <th data-field="year" data-sortable="true">Year</th>
+                <th data-formatter="LinkFormatter">Year</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<script type="text/javascript">
+function LinkFormatter(value, row, index){
+  return "<a href='/projects/162'>"
+}
+var project_data = [];
+
+$.getJSON('/projects/api',function(data){
+  $.each(data, function(i){
+    project_data.push(data[i]);
+  });
+  }
+);
+
+setTimeout(function () {
+ $('#table').bootstrapTable({
+    data: project_data
+ });
+
+ $(".mybtn-top").click(function () {
+   alert('works');
+    //  $('#table').bootstrapTable('scrollTo', 0);
+ });
+
+ $(".mybtn-row").click(function () {
+     var index = +$('.row-index').val(),
+         top = 0;
+     $('#table').find('tbody tr').each(function (i) {
+       if (i < index) {
+           top += $(this).height();
+         }
+     });
+     $('#table').bootstrapTable('scrollTo', top);
+ });
+
+ $(".mybtn-btm").click(function () {
+     $('#table').bootstrapTable('scrollTo', 'bottom');
+ });
+
+},1000); -->
+<!-- </script> -->
 
 
+
+
+
+
+
+<!--
 <div class="col-lg-12 col-md-8 col-sm-8 col-xs-8 table-responsive">
   <table class="table-striped table table-bordered table-hover">
     <thead>
       <tr>
-        <th>title</th>
-        <th>description</th>
-        <th>detail</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Detail</th>
       </tr>
     </thead>
     <tbody id="table-id">
     </tbody>
   </table>
-</div>
+</div> -->
 
 <% @test.each do |x|%>
     <script type="text/javascript">
     var tableRow = $('<tr>');
     var var_title = '<%=x.title%>';
     var var_description = '<%=x.description%>';
+    var var_make = '<%=x.make%>';
+    var var_model = '<%=x.model%>';
+    var var_year = '<%=x.year%>';
     var var_detail = '<%= link_to 'show details', project_path(x.id)%>';
     $('#table-id').append(tableRow);
     tableRow.append('<td>'+var_title+'</td>');
     tableRow.append('<td>'+var_description+'</td>');
+    tableRow.append('<td>'+var_make+'</td>');
+    tableRow.append('<td>'+var_model+'</td>');
+    tableRow.append('<td>'+var_year+'</td>');
     tableRow.append('<td>'+var_detail+'</td>');
     </script>
 <%end%>
+
+
 
 
 </p>

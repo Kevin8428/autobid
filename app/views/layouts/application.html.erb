@@ -8,7 +8,12 @@
     <%= yield :head%>
     <%= csrf_meta_tags %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Alegreya+Sans'  type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<%=link_to('bootstrap-table.css')%>" >
+    <link rel="stylesheet" href="<%=link_to('jquery.bdt.css')%>" >
+    <img src='<%=image_path('saab.jpg')%>' alt="...">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   </head>
   <body>
     <div class="container">
@@ -21,5 +26,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!--  bootstraps javascript code-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="<%=javascript_path "bootstrap-table.js"%>"></script>
+    <script src="<%=javascript_path "bootstrap-table-filter.js"%>"></script>
+    <script src="<%=javascript_path "bootstrap-table-filter-two.js"%>"></script>
+    <script src="<%=javascript_path "bs-table.js"%>"></script>
+    <script src="<%=javascript_path "jquery.bdt.js"%>"></script>
+    <script src="<%=javascript_path "jquery.sortelements.js"%>"></script>
+    <!-- <script src="app/assets/javascripts/jquery.sortelements.js"></script> -->
+
   </body>
 </html>

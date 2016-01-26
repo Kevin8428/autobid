@@ -5,6 +5,12 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( application.css )
 Rails.application.config.assets.precompile += %w( account.css )
 Rails.application.config.assets.precompile += %w( project.css )
+Rails.application.config.assets.precompile += %w( jquery.bdt.js )
+Rails.application.config.assets.precompile += %w( jquery.sortelements.js )
+Rails.application.config.assets.precompile += %w( bootstrap-table.js )
+Rails.application.config.assets.precompile += %w( bootstrap-table-filter.js )
+Rails.application.config.assets.precompile += %w( bootstrap-table-filter-two.js )
+Rails.application.config.assets.precompile += %w( bs-table.js )
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 
