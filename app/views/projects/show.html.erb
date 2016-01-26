@@ -1,19 +1,17 @@
+<%= stylesheet_link_tag 'application' %>
 <%= render(:partial => 'nav')%>
-<% content_for :head do %>
-  <!--define style -->
-  <%= stylesheet_link_tag "account" %>
-<%end%>
 <h1>Title: <div id = 'user-id'><%= @test.title %></div></h1>
 <h3>Description: <%= @test.description%></h3>
 <%= link_to 'Log out', '/logout'%>
 <%= link_to 'My Account', account_path(@user.id)%>
-
+<br>
+user:<%= @user.username %>
+<br>
 <h3>Add comment</h3>
 <section id='add-comment'>
-  <input type="hidden" id='title-text' value= <%= @user.username %>  placeholder=''>
-  <!-- <button type="button" id='title-button'>project ID</button> -->
+
+  <!-- <input type="hidden" id='title-text' value= <%= @user.username %>  placeholder=''> -->
   <input type="hidden" id='account-text' value=<%=session[:user_id]%> placeholder=''>
-  <!-- <button type="button" id='account-button'>account ID</button> -->
   <input type="text" id='comment-text' value="" placeholder='add comment'><br/>
   <button type="button" id='comment-button'>Add Comment</button>
   <div class='error'></div>
