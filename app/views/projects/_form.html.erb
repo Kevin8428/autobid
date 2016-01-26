@@ -1,4 +1,10 @@
 <%= form_for @test, :html => {:class => 'comment-box'} do|f| %>
+  <%= f.label 'make' %>
+  <%= f.text_field :make, :id =>'user-input-make'%>
+  <%= f.label 'model' %>
+  <%= f.text_field :model, :id =>'user-input-model'%>
+  <%= f.label 'year' %>
+  <%= f.text_field :year, :id =>'user-input-year'%><br/><br/>
   <%= f.label 'title' %><br/>
   <%= f.text_field :title, :id =>'user-input-title'%><br/>
   <%= f.label 'description' %><br/>

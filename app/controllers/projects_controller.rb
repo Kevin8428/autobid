@@ -36,7 +36,6 @@ class ProjectsController < ApplicationController
     @test = Project.new(project_params)
     if @test.save
       redirect_to account_path(session[:user_id])
-
     else
       render :create
     end
@@ -66,7 +65,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :account_id)
+    params.require(:project).permit(:title, :description, :account_id, :make, :model, :year)
   end
   # 'require'(:project) is the @project from the _form
 end

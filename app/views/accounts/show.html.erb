@@ -8,12 +8,15 @@
 
 <h1>Your Projects</h1>
 
-<div class="col-md-6">
-  <table class="table table-striped">
+<div class="col-lg-12 col-md-8 col-sm-8 col-xs-8 table-responsive">
+  <table class="table-striped table table-bordered table-hover">
     <thead>
       <tr>
         <th>title</th>
         <th>description</th>
+        <th>make</th>
+        <th>model</th>
+        <th>year</th>
         <th>detail</th>
         <th>edit</th>
         <th>remove</th>
@@ -32,13 +35,22 @@
     <script type="text/javascript">
     var tableRow = $('<tr>');
     var var_title = '<%=x.title%>';
+    var var_make = '<%=x.make%>';
+    var var_model = '<%=x.model%>';
+    var var_year = '<%=x.year%>';
+    // var make = '<%=x.make%>';
+    // var model = '<%=x.model%>';
+    // var year = '<%=x.year%>';
     var var_description = '<%=x.description%>';
     var var_detail = '<%= link_to 'show details', project_path(x.id)%>';
-    var var_edit = '<%= link_to 'edit', edit_project_path(x.id)%>';;
+    var var_edit = '<%= link_to 'edit', edit_project_path(x.id)%>';
     var var_remove = '<%= link_to 'remove', x, method: :delete%>';
     $('#table-id').append(tableRow);
     tableRow.append('<td>'+var_title+'</td>');
     tableRow.append('<td>'+var_description+'</td>');
+    tableRow.append('<td>'+var_make+'</td>');
+    tableRow.append('<td>'+var_model+'</td>');
+    tableRow.append('<td>'+var_year+'</td>');
     tableRow.append('<td>'+var_detail+'</td>');
     tableRow.append('<td>'+var_edit+'</td>');
     tableRow.append('<td>'+var_remove+'</td>');

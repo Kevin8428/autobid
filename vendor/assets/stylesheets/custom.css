@@ -2,6 +2,10 @@
 
 /* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
 
+.table-hover > tbody > tr:hover {
+  background-color: #c9c9c9;
+}
+
 .full {
 width: 100%;
 height: 100%;
