@@ -28,7 +28,6 @@ app.blueprints.collection = Backbone.Collection.extend({
     this.on('change', function(){ //event listener
       this.fetch(); //refetch when collection changes
     });
-
   }
 });
 
