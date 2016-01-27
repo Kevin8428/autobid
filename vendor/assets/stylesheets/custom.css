@@ -17,6 +17,20 @@
   text-align: center;
 }
 
+#floating-panel{
+  width: 40%;
+  margin-left: 33%;
+  margin-right: 33%;
+}
+
+#map{
+  width:40%;
+  height:30%;
+  float: right;
+  margin-top: 5%;
+  margin-right: 5%;
+}
+
 .project-container{
   /*background-color: red;*/
   text-align: center
@@ -24,9 +38,10 @@
 .project-comment{
   /*background-color: blue;*/
   text-align: center;
-  margin-left: 15%;
-  margin-right: 35%;
-  width: 40rem;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 40%;
+  float: left;
 }
 
 .full {

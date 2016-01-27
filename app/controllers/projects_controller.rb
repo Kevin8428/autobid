@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
   end
 
   def home
-
+    
   end
 
   def show

@@ -5,50 +5,70 @@
 <h1>new project</h1>
 <%= render 'form'%>
 
-
 <!-- </script> -->
 
-<input type="text" id="test" value="100">
-Car Location:
 <div id="floating-panel">
   <input id="address" type="textbox" placeholder="Input Location">
   <input class="btn btn-default" id="submit" type="button" value="Submit">
 </div>
-<div id='map' style="width:100%; height:30%;"></div>
+<div id='map' style="width:100%; height:30%; margin-top: 10px; margin-right: 0px; margin-left: 0px;"></div>
 
 <script type="text/javascript">
-  var map;
+  // var map;
+
   function initMap() {
-    var myLatLng = {lat: 41.8789, lng: -87.6358}; //set starting location
-      map = new google.maps.Map(document.getElementById('map'), { //make new map and tie to dom
-        zoom: 6,
-        center: myLatLng
-      });
-      document.getElementById('submit').addEventListener('click', function() { //event to search user input
+    var myLatLng = {lat: 42.3528795, lng: -83.2393899}; //set starting location
+    var map = new google.maps.Map(document.getElementById('map'), { //make new map and tie to dom
+      zoom: 2,
+      center: myLatLng
+    });
+    ///////get users current location
+    var infoWindow = new google.maps.InfoWindow({map: map});
+    // Try HTML5 geolocation.
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('Location found.');
+          map.setCenter(pos);
+          map.setZoom(10)
+        }, function() {
+          handleLocationError(true, infoWindow, map.getCenter());
+        });
+      } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
+      ////////// listen for user to input location
+      document.getElementById('submit').addEventListener('click', function() {
         geocodeAddress(geocoder, map);
         google.maps.event.trigger(map, 'resize');
         map.setCenter(center);
-        map.setZoom(10);
+        map.setZoom(14);
       });
 
       var geocoder = new google.maps.Geocoder();
       var center = map.getCenter();
-
-      var contentString = 'starting position: Sears Tower';
-      var infowindow = new google.maps.InfoWindow({
-        content: contentString
-      });
-      var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        // zoom: 10,
-        title: 'Hello World!'
-      });
-      marker.addListener('click',function(){
-        infowindow.open(map, marker);
+      // var contentString = 'starting position: Sears Tower';
+      // var infowindow = new google.maps.InfoWindow({
+      //   content: contentString
+      // });
+      // var marker = new google.maps.Marker({
+      //   position: myLatLng,
+      //   map: map,
+      //   // zoom: 10,
+      //   title: 'Hello World!'
+      // });
+      // marker.addListener('click',function(){
+      //   infowindow.open(map, marker);
         // infowindow.open(alert('test'));
-      });
+      // });
   }
+
+////////
 var latitude;
 var longitude;
   function geocodeAddress(geocoder, resultsMap) {
@@ -64,7 +84,7 @@ var longitude;
           position: results[0].geometry.location
         });
         var infowindow = new google.maps.InfoWindow({
-          content: ('lat: '+latitude+' ; '+'lng: '+longitude)
+          content: ('car location')
         });
         marker.addListener('click',function(){
           infowindow.open(map, marker);

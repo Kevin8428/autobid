@@ -2,14 +2,14 @@
 <%= render(:partial => 'nav')%>
 
 <h1 id='project-head'>Title: <%= @test.title %></h1>
-<h3>Description: <%= @test.description%></h3>
+<h3>Description: <%= @test.description%></h3><br>
 
 <div class="project-container">
-    <h3>Add comment</h3>
+    <!-- <h3>Add comment</h3> -->
     <section id='add-comment'>
       <input type="hidden" id='title-text' value= <%= @test.id %>  placeholder=''>
       <input type="hidden" id='account-text' value=<%=session[:user_id]%> placeholder=''>
-      <input type="text" id='comment-text' value="" placeholder='add comment'><br/>
+      <input type="text" id='comment-text' value="" placeholder='input comment here'><br/>
       <button type="button" id='comment-button'>Add Comment</button>
       <div class='error'></div>
     </section>
@@ -29,7 +29,7 @@
       </table>
     </div>
 </div>
-<div id='map' style="width:40%; height:30%; float: right;"></div>
+<div id='map'></div>
 
 
 <script>
