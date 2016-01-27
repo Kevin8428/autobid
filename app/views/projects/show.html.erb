@@ -35,18 +35,11 @@
 <script>
 $.getJSON('/comments/api',
   function(data){
-    console.log('getjson works')
-    console.log(data)
-
     var project = '<%= @test.id %>';
     var username = '<%= @user.username %>'
-    // var user = document.getElementById('title-text').value;
-    // console.log('USER ID IS ' + user);
     for(var i = 0; i< data.length; i++){
       var project_id = data[i].project_id;
-
       var comment = data[i].reply;
-      console.log(comment + i)
       if(parseInt(project) == parseInt(project_id)){
         var tableRow = $('<tr>');
         var var_user = username;
@@ -65,9 +58,9 @@ $.getJSON('/comments/api',
   var map;
   function initMap() {
     console.log('LATLNG: '+ '<%= @test.latitude %>'+';'+'<%= @test.longitude %>')
-    var myLatLng = {lat: parseInt('<%= @test.latitude %>'), lng: parseInt('<%= @test.longitude %>')}; //set starting location
+    var myLatLng = {lat: parseFloat('<%= @test.latitude %>'), lng: parseFloat('<%= @test.longitude %>')}; //set starting location
       map = new google.maps.Map(document.getElementById('map'), { //make new map and tie to dom
-        zoom: 7,
+        zoom: 9,
         center: myLatLng
       });
       var marker = new google.maps.Marker({
@@ -75,6 +68,9 @@ $.getJSON('/comments/api',
         map: map,
         // zoom: 10,
         title: 'Hello World!'
+      });
+      var infowindow = new google.maps.InfoWindow({
+        content: ('car location')
       });
       marker.addListener('click',function(){
         infowindow.open(map, marker);

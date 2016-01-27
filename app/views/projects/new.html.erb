@@ -24,11 +24,11 @@ Car Location:
         zoom: 6,
         center: myLatLng
       });
-      document.getElementById('submit').addEventListener('click', function() { //when searching location, run function
-            geocodeAddress(geocoder, map);
-            google.maps.event.trigger(map, 'resize');
-            map.setCenter(center);
-            map.setZoom(10);
+      document.getElementById('submit').addEventListener('click', function() { //event to search user input
+        geocodeAddress(geocoder, map);
+        google.maps.event.trigger(map, 'resize');
+        map.setCenter(center);
+        map.setZoom(10);
       });
 
       var geocoder = new google.maps.Geocoder();
@@ -46,6 +46,7 @@ Car Location:
       });
       marker.addListener('click',function(){
         infowindow.open(map, marker);
+        // infowindow.open(alert('test'));
       });
   }
 var latitude;
@@ -56,13 +57,18 @@ var longitude;
     geocoder.geocode({'address': address}, function(results, status) {
       if (status === google.maps.GeocoderStatus.OK) {
         resultsMap.setCenter(results[0].geometry.location);
+        longitude = results[0].geometry.location.lng();
+        latitude = results[0].geometry.location.lat();
         var marker = new google.maps.Marker({
           map: resultsMap,
           position: results[0].geometry.location
         });
-        longitude = results[0].geometry.location.lng();
-        latitude = results[0].geometry.location.lat();
-
+        var infowindow = new google.maps.InfoWindow({
+          content: ('lat: '+latitude+' ; '+'lng: '+longitude)
+        });
+        marker.addListener('click',function(){
+          infowindow.open(map, marker);
+        });
       } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
