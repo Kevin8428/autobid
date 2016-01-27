@@ -11,6 +11,7 @@ class AccountsController < ApplicationController
     render json: @user, status: :ok
   end
 
+# get method for accounts - returns html form to create user
   def new
     @user = Account.new
   end
@@ -22,9 +23,11 @@ class AccountsController < ApplicationController
     @project = Project.all
   end
 
+# post method for accounts
   def create
     @user = Account.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       redirect_to @user
     else
       render 'new'
