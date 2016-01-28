@@ -1,3 +1,139 @@
 <%= render(:partial => 'nav')%>
 <h1>Edit Project</h1>
 <%= render 'form'%>
+
+
+<input type='file' id="input-id">
+<div id='images'>
+
+</div>
+<!-- <img id="img"/> -->
+<div id="base-id"></div>
+
+
+<script>
+  function readImage() {
+    if ( this.files && this.files[0] ) {
+      var FR= new FileReader();
+      FR.onload = function(e) {
+         var image = document.createElement('img');
+         image.id = 'img-load'
+         var parent = document.getElementById('images');
+         parent.appendChild(image);
+        //  document.getElementById("img").src = e.target.result;
+        //  document.getElementById("base-id").innerHTML = e.target.result;
+         document.getElementById('base-64').value=e.target.result;
+         document.getElementById('img-load').src=e.target.result;
+      };
+      FR.readAsDataURL( this.files[0] );
+    }
+  }
+  document.getElementById("input-id").addEventListener("change", readImage, false);
+</script>
+
+<div id="floating-panel">
+  <input id="address" type="textbox" placeholder="Input Location">
+  <input class="btn btn-default" id="submit" type="button" value="Submit">
+</div>
+
+
+<div id='map-id' style="width:100%; height:30%; margin-top: 10px; margin-right: 0px; margin-left: 0px;"></div>
+
+<script type="text/javascript">
+  // var map;
+
+  function initMap() {
+    var myLatLng = {lat: 42.3528795, lng: -83.2393899}; //set starting location
+    var map = new google.maps.Map(document.getElementById('map-id'), { //make new map and tie to dom
+      zoom: 2,
+      center: myLatLng
+    });
+    ///////get users current location
+    var infoWindow = new google.maps.InfoWindow({map: map});
+    // Try HTML5 geolocation.
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('Location found.');
+          map.setCenter(pos);
+          map.setZoom(10)
+        }, function() {
+          handleLocationError(true, infoWindow, map.getCenter());
+        });
+      } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
+      ////////// listen for user to input location
+      document.getElementById('submit').addEventListener('click', function() {
+        geocodeAddress(geocoder, map);
+        google.maps.event.trigger(map, 'resize');
+        map.setCenter(center);
+        map.setZoom(14);
+      });
+
+      var geocoder = new google.maps.Geocoder();
+      var center = map.getCenter();
+      // var contentString = 'starting position: Sears Tower';
+      // var infowindow = new google.maps.InfoWindow({
+      //   content: contentString
+      // });
+      // var marker = new google.maps.Marker({
+      //   position: myLatLng,
+      //   map: map,
+      //   // zoom: 10,
+      //   title: 'Hello World!'
+      // });
+      // marker.addListener('click',function(){
+      //   infowindow.open(map, marker);
+        // infowindow.open(alert('test'));
+      // });
+  }
+
+////////
+var latitude;
+var longitude;
+  function geocodeAddress(geocoder, resultsMap) {
+    var address = document.getElementById('address').value;
+
+    geocoder.geocode({'address': address}, function(results, status) {
+      if (status === google.maps.GeocoderStatus.OK) {
+        resultsMap.setCenter(results[0].geometry.location);
+        longitude = results[0].geometry.location.lng();
+        latitude = results[0].geometry.location.lat();
+        var marker = new google.maps.Marker({
+          map: resultsMap,
+          position: results[0].geometry.location
+        });
+        var infowindow = new google.maps.InfoWindow({
+          content: ('car location')
+        });
+        marker.addListener('click',function(){
+          infowindow.open(map, marker);
+        });
+      } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+    });
+    setTimeout(function getLatLng(){
+      document.getElementById('user-latitude').value=latitude;
+      document.getElementById('user-longitude').value=longitude;
+    },1000);
+  }
+</script>
+
+
+
+
+
+<!-- load googlemaps API -->
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjLvHS4VWyc_r1Spdl_dzV3zffOklQSR0&callback=initMap"
+type="text/javascript">
+
+
+</script>
