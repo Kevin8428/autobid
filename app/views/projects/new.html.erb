@@ -36,14 +36,14 @@
 </div>
 
 
-<div id='map' style="width:100%; height:30%; margin-top: 10px; margin-right: 0px; margin-left: 0px;"></div>
+<div id='map-id' style="width:100%; height:30%; margin-top: 10px; margin-right: 0px; margin-left: 0px;"></div>
 
 <script type="text/javascript">
   // var map;
 
   function initMap() {
     var myLatLng = {lat: 42.3528795, lng: -83.2393899}; //set starting location
-    var map = new google.maps.Map(document.getElementById('map'), { //make new map and tie to dom
+    var map = new google.maps.Map(document.getElementById('map-id'), { //make new map and tie to dom
       zoom: 2,
       center: myLatLng
     });
