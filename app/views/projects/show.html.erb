@@ -31,6 +31,16 @@
 </div>
 <div id='map'></div>
 
+<!-- <input type='file' id="fileInput">
+<div id='fileDisplayArea' src="//placehold.it/1x1/"></div><br>
+<div id='base'></div> -->
+<input type='file' id="input-id">
+<img id="img" src="//placehold.it/1x1/" />
+<div id="base"></div>
+
+
+
+
 
 <script>
 $.getJSON('/comments/api',
@@ -80,4 +90,18 @@ $.getJSON('/comments/api',
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjLvHS4VWyc_r1Spdl_dzV3zffOklQSR0&callback=initMap"
 type="text/javascript">
+</script>
+
+<script>
+  function readImage() {
+    if ( this.files && this.files[0] ) {
+      var FR= new FileReader();
+      FR.onload = function(e) {
+         document.getElementById("img").src = e.target.result;
+         document.getElementById("base").innerHTML = e.target.result;
+      };
+      FR.readAsDataURL( this.files[0] );
+    }
+  }
+  document.getElementById("input-id").addEventListener("change", readImage, false);
 </script>
