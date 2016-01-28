@@ -6,11 +6,36 @@
 <%= render 'form'%>
 
 <!-- </script> -->
+<input type='file' id="input-id">
+<img id="img" src="//placehold.it/1x1/" />
+<div id="base-id"></div>
+
+
+<script>
+  function readImage() {
+    if ( this.files && this.files[0] ) {
+      var FR= new FileReader();
+      FR.onload = function(e) {
+        //  document.getElementById("img").src = e.target.result;
+         document.getElementById("base-id").innerHTML = e.target.result;
+         document.getElementById('base-64').value=e.target.result;
+      };
+      FR.readAsDataURL( this.files[0] );
+    }
+  }
+  document.getElementById("input-id").addEventListener("change", readImage, false);
+</script>
+<br>
+<br>
+<br>
+<br>
 
 <div id="floating-panel">
   <input id="address" type="textbox" placeholder="Input Location">
   <input class="btn btn-default" id="submit" type="button" value="Submit">
 </div>
+
+
 <div id='map' style="width:100%; height:30%; margin-top: 10px; margin-right: 0px; margin-left: 0px;"></div>
 
 <script type="text/javascript">

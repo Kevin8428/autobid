@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
   end
 
   def home
-    
+
   end
 
   def show
@@ -65,7 +65,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :account_id, :make, :model, :year, :latitude, :longitude)
+    params.require(:project).permit(:title, :description, :account_id, :make, :model, :year, :latitude, :longitude, :base)
   end
   # 'require'(:project) is the @project from the _form
 end
