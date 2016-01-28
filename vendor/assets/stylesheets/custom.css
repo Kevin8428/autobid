@@ -22,6 +22,12 @@
   margin-left: 33%;
   margin-right: 33%;
 }
+#ajax{
+  width: 40%;
+  float:right;
+  text-align: right;
+  margin-right: 5%;
+}
 
 #map-id{
   width:40%;
@@ -36,6 +42,10 @@
   float: right;
   margin-top: 4px;
   margin-right: 5%;
+}
+#img-load{
+  width:15%;
+  height:15%;
 }
 
 .project-container{

@@ -29,23 +29,28 @@
       </table>
     </div>
 </div>
+<div id="ajax">
+    <input type="button" value="find mechanic" onclick="foursquare();" />
+</div>
+
   <div id='map-id'></div>
   <img id="img" src='<%= @test.base%>'>
   <div id="base"></div>
-  <input id="ajax" type="button" value="locate" onclick="foursquare();" />
+
 <!--Z0T1QTKIINT2KCISPS5JWALHIF4R1L1G3MSZS4UOQ4Y34OWJ //clientid-->
 <!--YRD3RPUJR12O40RBNHFN0TS5O5BWENGYGSLFPUTDYHGQUG3S //clientsecret  -->
 <script type="text/javascript">
 
-var lat = '41.946464';
-var lng = '-87.6895898';
-var date = '20150214';
-var radius = '5000';
+var lat = '<%= @test.latitude %>';
+var lng = '<%= @test.longitude %>';
+var date = '20160101';
+var radius = '1500';
+var results = [];
 
 var foursquare = function(){
 $.getJSON('https://api.foursquare.com/v2/venues/search?\
 ll='+lat+','+lng+'\
-&query=mechanic\
+&query=auto\
 &v='+date+'\
 &radius='+radius+'\
 &m=foursquare\
@@ -53,8 +58,34 @@ ll='+lat+','+lng+'\
 &client_id=Z0T1QTKIINT2KCISPS5JWALHIF4R1L1G3MSZS4UOQ4Y34OWJ',
 function(data){
   console.log(data);
+  console.log(data.response.venues.length);
+
+  for (var i = 0; i < data.response.venues.length; i++) {
+    var lat = data.response.venues[i].location.lat;
+    var lng = data.response.venues[i].location.lng;
+    var name = data.response.venues[i].name;
+    addMarker(lat,lng,name);
+  }
 })
 }
+
+function addMarker(x,y,z){
+  console.log(x,y,z);
+  var contentString = z;
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+  var marker = new google.maps.Marker({
+    position: {lat: parseFloat(x), lng: parseFloat(y)},
+    map: map,
+    title: 'Hello World!'
+  });
+  marker.addListener('click',function(){
+    infowindow.open(map, marker);
+  });
+  // markers.push(marker);
+}
+
 </script>
 
 <script>
