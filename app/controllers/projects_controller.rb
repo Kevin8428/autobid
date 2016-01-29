@@ -20,6 +20,7 @@ class ProjectsController < ApplicationController
   def show
     @test = Project.find(params[:id])
     @user = Account.find(session[:user_id])
+
   end
 
 

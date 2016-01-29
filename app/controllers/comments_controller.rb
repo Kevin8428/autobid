@@ -19,12 +19,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    # puts '----params'
     puts params.inspect
-    # @project = Project.find_by(id: params[:id])
-    puts '---project'
+    # puts '---project'
 
-    @comment = Comment.new({"reply"=>params[:description], "project_id"=>params[:project_id], 'account_id' => session[:user_id]})
+    @comment = Comment.new({"reply"=>params[:reply], "project_id"=>params[:project_id], 'account_id' => session[:user_id], "username"=>params[:project_username]})
 
     if @comment.save
       redirect_to account_path(session[:user_id])
@@ -47,7 +45,7 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:description).permit(:description, :comment)
+    params.require(:description).permit(:description, :comment, :username, :project_id, :user_id, :project_username)
     # params.require(:account).permit(:email, :username, :password)
   end
 

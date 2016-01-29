@@ -33,14 +33,16 @@ app.blueprints.collection = Backbone.Collection.extend({
 
 ////////////
 //////////// CREATE FUNCTION
-app.create = function(comment, a){
+app.create = function(comment, project_id, project_username){
   if (!comment) {
     console.log('missing something!');
     return false
   }
+  //this below creates the parameter and value, the comments controller grabs this and sends to model which sends to database
   app.active.commentscollection.create({ //all is well, call create method to build new row
-    description: comment,
-    project_id: a
+    reply: comment,
+    project_id: project_id,
+    project_username: project_username
     // console.log('creating now!')
   });
   return true;
@@ -98,9 +100,10 @@ $(document).ready(function(){
     window.location.reload(); //REMOVE ONCE RENDER VIEW WORKS
     event.preventDefault();
     var comment = $('#comment-text').val();
-    var project_id = $('#title-text').val()
-    app.create(comment, project_id);
-    console.log('passing text: ' + comment);
+    var project_id = $('#title-text').val();
+    var project_username = document.getElementById('username-text').value;
+    app.create(comment, project_id, project_username);
+    console.log('passing text: ' + project_username);
   });
 
 });

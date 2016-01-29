@@ -7,8 +7,9 @@
 <div class="project-container">
     <!-- <h3>Add comment</h3> -->
     <section id='add-comment'>
-      <input type="hidden" id='title-text' value= '<%= @test.id %>'  placeholder=''>
-      <input type="hidden" id='account-text' value='<%=session[:user_id]%>' placeholder=''>
+      <input type="text" id='title-text' value= '<%= @test.id %>'  placeholder=''>
+      <input type="text" id='username-text' value= '<%= @user.username %>'  placeholder=''>
+      <input type="text" id='account-text' value='<%=session[:user_id]%>' placeholder=''>
       <input type="text" id='comment-text' value="" placeholder='input comment here'><br/>
       <button type="button" id='comment-button'>Add Comment</button>
       <div class='error'></div>
@@ -92,10 +93,11 @@ function addMarker(x,y,z){
 $.getJSON('/comments/api',
   function(data){
     var project = '<%= @test.id %>';
-    var username = '<%= @user.username %>'
+    // var username = '<%= @user.username %>'
     for(var i = 0; i< data.length; i++){
       var project_id = data[i].project_id;
       var comment = data[i].reply;
+      var username = data[i].username;
       if(parseInt(project) == parseInt(project_id)){
         var tableRow = $('<tr>');
         var var_user = username;
