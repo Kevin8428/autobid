@@ -10,7 +10,10 @@
   background-image: url('saab.jpg');
   background-position: center center;
   background-size: cover;
-  /*opacity: 0.1;*/
   height: 100%;
   width: 100%;
+}
+
+.bgimage::after{
+
 }

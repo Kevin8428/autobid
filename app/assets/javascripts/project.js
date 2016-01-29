@@ -91,7 +91,6 @@ app.blueprints.modelView = Backbone.View.extend({
 /////////// EVENTS AND TRIGGERS
 
 $(document).ready(function(){
-  // console.log('jquery is working');
   app.active.commentscollection = new app.blueprints.collection();
   app.active.commentscollectionView = new app.blueprints.collectionView({
     collection: app.active.commentscollection
@@ -103,7 +102,6 @@ $(document).ready(function(){
     var project_id = $('#title-text').val();
     var project_username = $('#username-text').val();
     app.create(comment, project_id, project_username);
-    console.log('passing text: ' + project_username);
   });
 
 });

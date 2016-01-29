@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   #
   # get 'comment/edit'
 
-root to: 'projects#home'
-# get '/', to: 'accounts#index'
+root to: 'sessions#home'
+# get '/', to: 'projects#home'
 get '/register', to: 'accounts#new'
 get '/login', to: 'sessions#new'
 post '/sessions', to: 'sessions#create' #when sending from session yield this action

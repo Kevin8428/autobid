@@ -7,9 +7,9 @@
 <div class="project-container">
     <!-- <h3>Add comment</h3> -->
     <section id='add-comment'>
-      <input type="text" id='title-text' value= '<%= @test.id %>'  placeholder=''>
-      <input type="text" id='username-text' value= '<%= @user.username %>'  placeholder=''>
-      <input type="text" id='account-text' value='<%=session[:user_id]%>' placeholder=''>
+      <input type="hidden" id='title-text' value= '<%= @test.id %>'  placeholder=''>
+      <input type="hidden" id='username-text' value= '<%= @user.username %>'  placeholder=''>
+      <input type="hidden" id='account-text' value='<%=session[:user_id]%>' placeholder=''>
       <input type="text" id='comment-text' value="" placeholder='input comment here'><br/>
       <button type="button" id='comment-button'>Add Comment</button>
       <div class='error'></div>
