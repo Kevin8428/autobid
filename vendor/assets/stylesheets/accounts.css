@@ -2,8 +2,27 @@
 #welcome-container{
 text-align: center;
 }
+#welcome-btn{
+  margin-top: 5px
+
+}
 .welcome{
 /*display: inline-block;;*/
+}
+#directions{
+  text-align: center;
+  font-size: 20px;
+}
+#submit{
+  margin-bottom: 5px;
+}
+#map-id{
+
+}
+#floating-panel{
+  text-align: center;
+  width: 100%;
+  margin: 0px;
 }
 .wrap {
 /*background-color: #222;
@@ -12,6 +31,7 @@ font-family: Merriweather;
 font-size: 0.9em;
 line-height: 1.8em;
 margin: 0;*/
+/*width: 100%;*/
 }
 
 .wrap::after {
@@ -21,6 +41,7 @@ left: 0;
 bottom: 0;
 right: 0;
 position: fixed;
+width: 100%;
 z-index: -1;
 background-image: url('saab.jpg');
 opacity: 0.3;
