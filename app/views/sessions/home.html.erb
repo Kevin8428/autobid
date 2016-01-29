@@ -1,4 +1,95 @@
 <%= stylesheet_link_tag 'accounts' %>
-<h1 id = 'welcome'>Welcome to autobid</h1>
-<%= link_to 'log in', login_path%> |
-<%= link_to 'register', register_path%>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+ <div class="container">
+   <div class="navbar-header">
+     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+       <span class="sr-only">Toggle navigation</span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="/logout">autobid</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <form class="navbar-form navbar-right">
+      <a href="#about"><button class="btn btn-default">About</button></a>
+      <!-- <button type="submit" class="btn btn-default"a href="#about">About</button> -->
+      </form>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<div id='welcome-container'>
+  <h1 id = 'welcome'>Welcome to autobid</h1>
+  <%= link_to 'log in', login_path%> |
+  <%= link_to 'register', register_path%>
+</div>
+
+
+
+
+
+
+<!-- SLOW MOVEMENT TO LINKS INSIDE PAGE -->
+<script type="text/javascript">
+$(function() {
+$('a[href*=#]:not([href=#])').click(function() {
+  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+    if (target.length) {
+      $('html,body').animate({
+        scrollTop: target.offset().top
+      }, 600);
+      return false;
+    }
+  }
+});
+});
+</script>
+
+
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
+<div id="about-wrapper">
+
+
+<A NAME="about">
+  <center>
+  <h3>What we do</h3>
+  autobid allows mechanics and individuals to meet in a virtual marketplace. A user can post 'projects' which detail work needing to be done his/her car. Users can upload images and map exactly where the car is located.</p><br>
+
+  Mechanics are then able to view projects and depending on availability of time and resources, give an estimate of cost and when the user could expect their car returned.</p><br>
+
+  <h3>The objective is two fold</h3>
+  First it allows for increased visability when performing car maintenance. Individuals and mechanics can discuss line item price quotes which will drive fair pricing and increase user knowledge.</p><br>
+
+  Second, it increases efficiency for getting car repairs. A quick project posting will allow mechanics to reach out to users so that users don't waste time shopping for quotes. Additionally with the mapping feature mechanics will know exactly where the car is located, should it need to be towed.
+  </center>
+</div>
+
+<h1></h1><br>
+<h1></h1><br>
+<h1></h1><br>
