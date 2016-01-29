@@ -40,6 +40,20 @@ $(document).ready(function () {
 
 });
 </script>
+<script type="text/javascript">
+function run(){
+  $.getJSON('/projects/api',function(data){
+    console.log(data);
+    console.log('works');
+    // $.each(data, function(i){
+    //   project_data.push(data[i]);
+    // });
+  })
+}
+console.log('AJAX TEST')
+run();
+</script>
+
 
 <!-- <div class="form-inline">
     <button type="button"

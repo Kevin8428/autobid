@@ -1,18 +1,34 @@
 
 #welcome-container{
-  position: relative;
-  margin-top: -20px;
-  content: ' ';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.6;
-  background-image: url('saab.jpg');
-  background-repeat: no-repeat;
-
+text-align: center;
 }
 .welcome{
-  position: absolute;
+/*display: inline-block;;*/
+}
+.wrap {
+/*background-color: #222;
+color: black;
+font-family: Merriweather;
+font-size: 0.9em;
+line-height: 1.8em;
+margin: 0;*/
+}
+
+.wrap::after {
+content: "";
+top: 0px;
+left: 0;
+bottom: 0;
+right: 0;
+position: fixed;
+z-index: -1;
+background-image: url('saab.jpg');
+opacity: 0.3;
+/*background-position: center center;*/
+background-repeat: no-repeat;
+background-attachment:fixed;
+background-position: left top;
+/*background-attachment: fixed;*/
+/*background-size: cover;*/
+transform: translatez(0);
 }

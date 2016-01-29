@@ -13,13 +13,15 @@
     <div id="navbar" class="navbar-collapse collapse">
       <form class="navbar-form navbar-right">
       <a href="#about"><button class="btn btn-default">About</button></a>
-      <!-- <button type="submit" class="btn btn-default"a href="#about">About</button> -->
       </form>
     </div>
   </div>
 </nav>
 <br>
 <br>
+<div class="wrap">
+
+
 <div id='welcome-container'>
   <h1 id = 'welcome'>Welcome to autobid</h1>
   <%= link_to 'log in', login_path%> |
@@ -29,7 +31,7 @@
 
 
 
-
+</div>
 
 <!-- SLOW MOVEMENT TO LINKS INSIDE PAGE -->
 <script type="text/javascript">
@@ -50,6 +52,7 @@ $('a[href*=#]:not([href=#])').click(function() {
 </script>
 
 
+
 <h1></h1><br>
 <h1></h1><br>
 <h1></h1><br>
@@ -69,14 +72,10 @@ $('a[href*=#]:not([href=#])').click(function() {
 <h1></h1><br>
 <h1></h1><br>
 <h1></h1><br>
-<h1></h1><br>
-<h1></h1><br>
-<h1></h1><br>
-<h1></h1><br>
-<div id="about-wrapper">
 
 
 <A NAME="about">
+<div id="about-wrapper">
   <center>
   <h3>What we do</h3>
   autobid allows mechanics and individuals to meet in a virtual marketplace. A user can post 'projects' which detail work needing to be done his/her car. Users can upload images and map exactly where the car is located.</p><br>
@@ -93,3 +92,151 @@ $('a[href*=#]:not([href=#])').click(function() {
 <h1></h1><br>
 <h1></h1><br>
 <h1></h1><br>
+
+
+
+
+
+<div id="floating-panel">
+  <input id="address" type="textbox" placeholder="Input Location">
+  <input class="btn btn-default" id="submit" type="button" value="Submit">
+</div>
+
+<div id="ajax">
+    <input type="button" value="find mechanic" onclick="foursquare_start();" />
+</div>
+
+<div id='map-id' style="width:100%; height:30%; margin-top: 10px; margin-right: 0px; margin-left: 0px;"></div>
+
+<script type="text/javascript">
+var latitude_start;
+var longitude_start;
+var map;
+  function initMap() {
+    var myLatLng = {lat: 42.3528795, lng: -83.2393899}; //set starting location
+    map = new google.maps.Map(document.getElementById('map-id'), { //make new map and tie to dom
+      zoom: 2,
+      center: myLatLng
+    });
+    ///////get users current location
+    var infoWindow = new google.maps.InfoWindow({map: map});
+    // Try HTML5 geolocation.
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('Location found.');
+          map.setCenter(pos);
+          map.setZoom(14);
+          latitude_start=position.coords.latitude;
+          longitude_start=position.coords.longitude;
+        }, function() {
+          handleLocationError(true, infoWindow, map.getCenter());
+        });
+      } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
+      ////////// listen for user to input location
+      document.getElementById('submit').addEventListener('click', function() {
+        geocodeAddress(geocoder, map);
+        google.maps.event.trigger(map, 'resize');
+        map.setCenter(center);
+        map.setZoom(14);
+        setTimeout(foursquare_start(),2000);
+        // setTimeout(function() { your_func(); }, 5000);
+      });
+      var geocoder = new google.maps.Geocoder();
+      var center = map.getCenter();
+  }
+
+
+  function geocodeAddress(geocoder, resultsMap) {
+    var address = document.getElementById('address').value;
+
+    geocoder.geocode({'address': address}, function(results, status) {
+      if (status === google.maps.GeocoderStatus.OK) {
+        resultsMap.setCenter(results[0].geometry.location);
+        longitude_start = results[0].geometry.location.lng();
+        latitude_start = results[0].geometry.location.lat();
+        var marker = new google.maps.Marker({
+          map: resultsMap,
+          position: results[0].geometry.location
+        });
+        var infowindow = new google.maps.InfoWindow({
+          content: ('car location')
+        });
+        marker.addListener('click',function(){
+          infowindow.open(map, marker);
+        });
+      } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+    });
+  }
+
+<!--///////ajax to foursquare  -->
+
+
+
+// <!--Z0T1QTKIINT2KCISPS5JWALHIF4R1L1G3MSZS4UOQ4Y34OWJ //clientid-->
+// <!--YRD3RPUJR12O40RBNHFN0TS5O5BWENGYGSLFPUTDYHGQUG3S //clientsecret  -->
+
+var lat = latitude_start;
+var lng = longitude_start;
+var date = '20160101';
+var radius = '500';
+var results = [];
+
+
+var foursquare_start = function(){
+$.getJSON('https://api.foursquare.com/v2/venues/search?\
+ll='+latitude_start+','+longitude_start+'\
+&query=auto\
+&v='+date+'\
+&radius='+radius+'\
+&m=foursquare\
+&client_secret=YRD3RPUJR12O40RBNHFN0TS5O5BWENGYGSLFPUTDYHGQUG3S\
+&client_id=Z0T1QTKIINT2KCISPS5JWALHIF4R1L1G3MSZS4UOQ4Y34OWJ',
+function(data){
+  console.log(data);
+  console.log(data.response.venues.length);
+
+  for (var i = 0; i < data.response.venues.length; i++) {
+    var lat = data.response.venues[i].location.lat;
+    var lng = data.response.venues[i].location.lng;
+    var name = data.response.venues[i].name;
+    addMarker(lat,lng,name);
+  }
+})
+}
+
+function addMarker(x,y,z){
+  console.log(x,y,z);
+  var contentString = z;
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+  var marker = new google.maps.Marker({
+    position: {lat: parseFloat(x), lng: parseFloat(y)},
+    map: map,
+    title: 'Hello World!'
+  });
+  // marker.addListener('click',function(){
+    // infowindow.open(map, marker);
+  // });
+  // markers.push(marker);
+}
+
+</script>
+
+<!-- load googlemaps API -->
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjLvHS4VWyc_r1Spdl_dzV3zffOklQSR0&callback=initMap"
+type="text/javascript">
+
+
+</script>
