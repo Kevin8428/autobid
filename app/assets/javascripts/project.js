@@ -101,7 +101,7 @@ $(document).ready(function(){
     event.preventDefault();
     var comment = $('#comment-text').val();
     var project_id = $('#title-text').val();
-    var project_username = document.getElementById('username-text').value;
+    var project_username = $('#username-text').val();
     app.create(comment, project_id, project_username);
     console.log('passing text: ' + project_username);
   });
