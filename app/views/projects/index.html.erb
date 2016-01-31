@@ -164,7 +164,7 @@ setTimeout(function () {
     var var_make = '<%=x.make%>';
     var var_model = '<%=x.model%>';
     var var_year = '<%=x.year%>';
-    var var_detail = '<%= link_to 'show details', project_path(x.id)%>';
+    var var_detail = '<%= link_to 'show details', project_path(x.id),'data-no-turbolink' => true%>';
     $('#table-id').append(tableRow);
     tableRow.append('<td>'+var_title+'</td>');
     tableRow.append('<td>'+var_description+'</td>');
