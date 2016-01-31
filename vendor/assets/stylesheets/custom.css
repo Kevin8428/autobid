@@ -5,6 +5,9 @@
 .table-hover > tbody > tr:hover {
   background-color: #c9c9c9;
 }
+#carousel-example-generic{
+  clear: both;
+}
 
 #login-wrapper{
   margin-top: 50px;
@@ -82,18 +85,23 @@ center{
   margin-right: 5%;
 }
 #img{
-  width:80%;
-  height:30%;
+  max-width:30%;
+  max-height:30%;
+  /*width:80%;
+  height:80%;*/
   float: right;
   margin-top: 4px;
   margin-right: 5%;
   clear: both;
 }
-#img-load{
+#img-load {
   width:15%;
   height:15%;
 }
-
+#img-load-two{
+  width:15%;
+  height:15%;
+}
 #map-text{
   margin-top: 5px;
   font-size: 20px;

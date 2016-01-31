@@ -13,7 +13,7 @@
 <!-- <img id="img"/> -->
 <div id="base-id"></div>
 
-
+<!-- IMPORT IMAGE JAVASCRIPT -->
 <script>
   function readImage() {
     if ( this.files && this.files[0] ) {
@@ -23,8 +23,6 @@
          image.id = 'img-load'
          var parent = document.getElementById('images');
          parent.appendChild(image);
-        //  document.getElementById("img").src = e.target.result;
-        //  document.getElementById("base-id").innerHTML = e.target.result;
          document.getElementById('base-64').value=e.target.result;
          document.getElementById('img-load').src=e.target.result;
       };
@@ -33,6 +31,26 @@
   }
   document.getElementById("input-id").addEventListener("change", readImage, false);
 </script>
+<!--/////////// -->
+<!-- IMPORT IMAGE JAVASCRIPT TWO-->
+<script>
+  function readImage() {
+    if ( this.files && this.files[0] ) {
+      var FR= new FileReader();
+      FR.onload = function(e) {
+         var image = document.createElement('img');
+         image.id = 'img-load-two'
+         var parent = document.getElementById('images');
+         parent.appendChild(image);
+         document.getElementById('base-64-two').value=e.target.result;
+         document.getElementById('img-load-two').src=e.target.result;
+      };
+      FR.readAsDataURL( this.files[0] );
+    }
+  }
+  document.getElementById("input-id").addEventListener("change", readImage, false);
+</script>
+<!--/////////// -->
 
 <div id="floating-panel">
   <input id="address" type="textbox" placeholder="Input Location">

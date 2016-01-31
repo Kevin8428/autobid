@@ -65,7 +65,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :account_id, :make, :model, :year, :latitude, :longitude, :base)
+    params.require(:project).permit(:title, :description, :account_id, :make, :model, :year, :latitude, :longitude, :base, :basetwo, :basethree)
   end
   # 'require'(:project) is the @project from the _form
 end
