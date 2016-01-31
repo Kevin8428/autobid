@@ -24,7 +24,7 @@
   /*margin: auto*/
 }
 .detail-container{
-  /*background-color: rgba(195, 195, 195, 0.9);*/
+  height: 200px;
 }
 #login-heaeder{
   margin-top: 5rem;
@@ -84,6 +84,25 @@ center{
   margin-top: 5px;
   margin-right: 5%;
 }
+#carousel-img{
+  max-height: 10%;
+}
+#images-two{
+  width: 100px;
+  float: right;
+  clear: all;
+  margin-right: 59px;
+}
+#images{
+  float: right;
+  clear: all;
+  margin-right: 5px;
+}
+.carousel-inner > .item > img {
+    margin: 0 auto;
+    width:640px;
+    height:360px;
+}
 #img{
   max-width:30%;
   max-height:30%;
@@ -94,14 +113,20 @@ center{
   margin-right: 5%;
   clear: both;
 }
-#img-load {
+/*#img-load {
   width:15%;
   height:15%;
+  margin-right: 20px;
+  padding-right: 40px;
 }
 #img-load-two{
   width:15%;
   height:15%;
-}
+  margin-right: 200px;
+  float;
+
+
+}*/
 #map-text{
   margin-top: 5px;
   font-size: 20px;
@@ -177,9 +202,10 @@ left:50%;
 #submit-project {
   background-color: rgb(91, 110, 235);
   text-align: center;
-  width: 45%;
+  width: 30%;
   height: 60px;
   margin: 0 auto;
+  clear: right;
   float: left;
   margin-left: 30px;
   border-radius: 5px;

@@ -44,7 +44,7 @@
     // var model = '<%=x.model%>';
     // var year = '<%=x.year%>';
     var var_description = '<%=x.description%>';
-    var var_detail = '<%= link_to 'show details', project_path(x.id)%>';
+    var var_detail = '<%= link_to 'show details', project_path(x.id),'data-no-turbolink' => true %>';
     var var_edit = '<%= link_to 'edit', edit_project_path(x.id)%>';
     var var_remove = '<%= link_to 'remove', x, method: :delete%>';
     $('#table-id').append(tableRow);

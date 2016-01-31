@@ -18,15 +18,20 @@ text-align: center;
 #image-location-div{
   background-color: rgb(91, 110, 235);
   text-align: center;
-  width: 50%;
+  width: 30%;
   height: 60px;
   margin: auto;
   float: right;
   margin-right: 30px;
   border-radius: 5px;
-
+  clear: none;
 }
 #input-id{
+  margin: auto;
+  text-align: center;
+  width: 80px;
+}
+#input-id-two{
   margin: auto;
   text-align: center;
   width: 80px;
