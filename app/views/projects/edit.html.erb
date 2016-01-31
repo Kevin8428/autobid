@@ -1,5 +1,8 @@
 <%= render(:partial => 'nav')%>
+<div id="head-wrapper">
 <h1>Edit Project</h1>
+</div>
+
 <%= render 'form'%>
 
 
@@ -46,7 +49,8 @@
     var myLatLng = {lat: 42.3528795, lng: -83.2393899}; //set starting location
     var map = new google.maps.Map(document.getElementById('map-id'), { //make new map and tie to dom
       zoom: 2,
-      center: myLatLng
+      center: myLatLng,
+      scrollwheel: false
     });
     ///////get users current location
     var infoWindow = new google.maps.InfoWindow({map: map});

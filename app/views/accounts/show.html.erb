@@ -3,30 +3,32 @@
 <%end%>
 
 <%= render 'projects/nav'%>
-<br />
-<h1>Welcome, <%= @user.username %>!</h1>
+<div id='head-wrapper'>
+  <!-- <br /> -->
+  <h1>Welcome, <%= @user.username %>!</h1>
 
-<h1>Your Projects</h1>
-
-<div class="col-lg-12 col-md-8 col-sm-8 col-xs-8 table-responsive">
-  <table class="table-striped table table-bordered table-hover">
-    <thead>
-      <tr>
-        <th>title</th>
-        <th>description</th>
-        <th>make</th>
-        <th>model</th>
-        <th>year</th>
-        <th>detail</th>
-        <th>edit</th>
-        <th>remove</th>
-      </tr>
-    </thead>
-    <tbody id="table-id">
-    </tbody>
-  </table>
+  <h1>Your Projects</h1>
 </div>
-
+<div id="body-wrapper">
+  <div class="col-lg-12 col-md-8 col-sm-8 col-xs-8 table-responsive">
+    <table class="table-striped table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>title</th>
+          <th>description</th>
+          <th>make</th>
+          <th>model</th>
+          <th>year</th>
+          <th>detail</th>
+          <th>edit</th>
+          <th>remove</th>
+        </tr>
+      </thead>
+      <tbody id="table-id">
+      </tbody>
+    </table>
+  </div>
+</div>
 
 
 
@@ -61,6 +63,3 @@
     <%= link_to 'remove', x, method: :delete%></h4> -->
   <%end%>
 <%end%>
-
-
-</p>

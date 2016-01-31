@@ -1,11 +1,19 @@
+<%= render(:partial => '/sessions/homenav')%>
 <%= stylesheet_link_tag 'accounts' %>
-<h1>Login</h1>
-<%= form_tag sessions_path do %>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-    <%= submit_tag "Log in" %>
-<% end %>
-
-Not a member yet? <%= link_to 'Register!', register_path%>
+<div id='login-wrapper'>
+  <h1 id= 'login-heaeder'>Login</h1>
+  <div id='input-wrapper'>
+      <div id='user-form'>
+        <%= form_tag sessions_path do %>
+          <div id='login-inputs'>
+            <%= label_tag :email %><br>
+            <%= text_field_tag :email%><br>
+            <%= label_tag :password %><br>
+            <%= password_field_tag :password %><br>
+          </div>
+            <%= submit_tag "Log in" %>
+        <% end %>
+        Not a member yet? <%= link_to 'Register!', register_path%>
+    </div>
+  </div>
+</div>

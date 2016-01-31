@@ -6,12 +6,30 @@ text-align: center;
   margin-top: 5px
 
 }
-.welcome{
-/*display: inline-block;;*/
-}
-#directions{
+#head-wrapper{
+  background-color: rgba(156, 183, 218, 0.5);
+  height: 100px;
   text-align: center;
-  font-size: 20px;
+  margin-bottom: 5px;
+}
+#body-wrapper{
+
+}
+#image-location-div{
+  background-color: rgb(91, 110, 235);
+  text-align: center;
+  width: 50%;
+  height: 60px;
+  margin: auto;
+  float: right;
+  margin-right: 30px;
+  border-radius: 5px;
+
+}
+#input-id{
+  margin: auto;
+  text-align: center;
+  width: 80px;
 }
 #submit{
   margin-bottom: 5px;
@@ -19,11 +37,22 @@ text-align: center;
 #map-id{
 
 }
+
 #floating-panel{
   text-align: center;
   width: 100%;
   margin: 0px;
+  clear: both;
 }
+
+.welcome{
+/*display: inline-block;;*/
+}
+#directions{
+  text-align: center;
+  font-size: 20px;
+}
+
 .wrap {
 /*background-color: #222;
 color: black;
@@ -44,6 +73,7 @@ position: fixed;
 width: 100%;
 z-index: -1;
 background-image: url('saab.jpg');
+background-size: 100%;
 opacity: 0.3;
 /*background-position: center center;*/
 background-repeat: no-repeat;

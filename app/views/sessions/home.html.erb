@@ -131,7 +131,8 @@ var map;
     var myLatLng = {lat: 42.3528795, lng: -83.2393899}; //set starting location
     map = new google.maps.Map(document.getElementById('map-id'), { //make new map and tie to dom
       zoom: 2,
-      center: myLatLng
+      center: myLatLng,
+      scrollwheel: false
     });
     ///////get users current location
     var infoWindow = new google.maps.InfoWindow({map: map});
@@ -143,7 +144,7 @@ var map;
             lng: position.coords.longitude
           };
           infoWindow.setPosition(pos);
-          infoWindow.setContent('Location found.');
+          infoWindow.setContent('Location found');
           map.setCenter(pos);
           map.setZoom(14);
           latitude_start=position.coords.latitude;

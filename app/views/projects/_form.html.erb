@@ -14,7 +14,12 @@
   <%= f.label 'description' %><br/>
   <%= f.text_field :description, :id =>'user-input-description'%><br/>
   <%= f.hidden_field :account_id, value: session[:user_id] %><br/>
-  <%= f.submit %>
+  <div id = 'submit-project'>
+    <div id = 'inner-submit-project'>
+        <%= f.submit "create project"%>
+    </div>
+  </div>
+
 <% end %>
 
 

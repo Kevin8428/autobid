@@ -1,42 +1,54 @@
 <%= stylesheet_link_tag 'application' %>
 <%= render(:partial => 'nav')%>
-
-<h1>Title: <%= @test.title %></h1>
-<h3>Description: <%= @test.description%></h3><br>
-
-<div class="project-container">
-    <!-- <h3>Add comment</h3> -->
-    <section id='add-comment'>
-      <input type="hidden" id='title-text' value= '<%= @test.id %>'  placeholder=''>
-      <input type="hidden" id='username-text' value= '<%= @user.username %>'  placeholder=''>
-      <input type="hidden" id='account-text' value='<%=session[:user_id]%>' placeholder=''>
-      <input type="text" id='comment-text' value="" placeholder='input comment here'><br/>
-      <button type="button" id='comment-button'>Add Comment</button>
-      <div class='error'></div>
-    </section>
-    <h3 id = 'project-id'></h3>
-    <h3 id = 'table-row-template'></h3>
-    <br>
-    <div class="project-comment">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th id='th-comment'>User</th>
-            <th id='th-comment'>Comment</th>
-          </tr>
-        </thead>
-        <tbody id="table-id">
-        </tbody>
-      </table>
-    </div>
-</div>
-<div id="ajax">
-    <input type="button" value="find mechanic" onclick="foursquare();" />
+<div class='detail-container'>
+<div id="head-wrapper">
+  <h1>Title: <%= @test.title %></h1>
+  <h3>Description: <%= @test.description%></h3><br>
 </div>
 
-  <div id='map-id'></div>
-  <img id="img" src='<%= @test.base%>'>
+
+  <div class="project-container">
+      <section id='add-comment'>
+        <input type="hidden" id='title-text' value= '<%= @test.id %>'  placeholder=''>
+        <input type="hidden" id='username-text' value= '<%= @user.username %>'  placeholder=''>
+        <input type="hidden" id='account-text' value='<%=session[:user_id]%>' placeholder=''>
+        <input type="text" id='comment-text' value="" placeholder='input comment here'><br/>
+        <button type="button" id='comment-button'>Add Comment</button>
+        <div class='error'></div>
+      </section>
+      <h3 id = 'project-id'></h3>
+      <h3 id = 'table-row-template'></h3>
+      <br>
+      <div class="project-comment">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th id='th-comment'>User</th>
+              <th id='th-comment'>Comment</th>
+            </tr>
+          </thead>
+          <tbody id="table-id">
+          </tbody>
+        </table>
+      </div>
+  </div>
+
+</div>
+  <!-- <div id='map-id'></div> -->
+<div class = 'detail-container' id = 'right-container'>
+  <div id='map-text'>
+
+  </div>
+  <div id="ajax">
+      <input type="button" value="find mechanic" onclick="foursquare();" />
+  </div>
+  <div id="map-id" style="width:80%; height:30%"></div><br>
+  <div id='map-text'>
+    car images:
+  </div>
   <div id="base"></div>
+  <img id="img" src='<%= @test.base%>'>
+</div>
 
 <!--Z0T1QTKIINT2KCISPS5JWALHIF4R1L1G3MSZS4UOQ4Y34OWJ //clientid-->
 <!--YRD3RPUJR12O40RBNHFN0TS5O5BWENGYGSLFPUTDYHGQUG3S //clientsecret  -->
@@ -119,7 +131,8 @@ $.getJSON('/comments/api',
     var myLatLng = {lat: parseFloat('<%= @test.latitude %>'), lng: parseFloat('<%= @test.longitude %>')}; //set starting location
       map = new google.maps.Map(document.getElementById('map-id'), { //make new map and tie to dom
         zoom: 11,
-        center: myLatLng
+        center: myLatLng,
+        scrollwheel: false
       });
       var marker = new google.maps.Marker({
         position: myLatLng,

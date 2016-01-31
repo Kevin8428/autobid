@@ -1,13 +1,23 @@
+<%= render(:partial => '/sessions/homenav')%>
 <%= stylesheet_link_tag 'accounts' %>
-<h1>Sign Up</h1>
+<div id='login-wrapper'>
+  <h1 id= 'login-heaeder'>Sign up</h1>
+  <div id='input-wrapper'>
+      <div id='user-form'>
 
-<%= form_for @user do |f| %>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-    <%= f.label :password %>
-    <%= f.password_field :password %><br />
-    <!-- <%= f.password_field :password_confirmation %> -->
-    <%= f.submit %>
-<%end%>
+        <%= form_for @user do |f| %>
+          <div id='login-inputs'>
+            <%= f.label :email %><br />
+            <%= f.text_field :email %><br />
+            <%= f.label :username %><br />
+            <%= f.text_field :username %><br />
+            <%= f.label :password %><br />
+            <%= f.password_field :password %><br />
+
+            <div id='submit-btn'><%= f.submit %></div><br />
+            Already a member? <%= link_to 'Log in!', login_path%>
+          </div>
+        <%end%>
+    </div>
+  </div>
+</div>
